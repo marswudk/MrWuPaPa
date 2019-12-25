@@ -1,0 +1,516 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Gupter|Noto+Sans+TC&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background-color: greenyellow;
+}
+
+#index {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/IMG_5476.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#index a {
+  position: relative;
+  top: -1000px;
+  left: calc(50% - 144px);
+  -webkit-animation: show;
+          animation: show;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes show {
+  0% {
+    position: relative;
+    top: -90px;
+  }
+  100% {
+    top: calc(50% - 90px);
+  }
+}
+
+@keyframes show {
+  0% {
+    position: relative;
+    top: -90px;
+  }
+  100% {
+    top: calc(50% - 90px);
+  }
+}
+
+#index a img {
+  width: 288px;
+}
+
+#index a img:hover {
+  -webkit-animation: shine 2s linear infinite alternate;
+          animation: shine 2s linear infinite alternate;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes shine {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+#index.dispear {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.all {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* 進版時不顯示除了index以外的頁面 */
+  /* 點擊logo後變更下列屬性 */
+  /*每頁顯示的圖片*/
+}
+
+.all .nav {
+  position: fixed;
+  top: 20%;
+  left: 2%;
+  z-index: 10;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.all .nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.all .nav .logo img {
+  width: 150px;
+}
+
+.all .nav ul {
+  border: 8px solid pink;
+}
+
+.all .nav ul li {
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
+  cursor: pointer;
+  list-style: none;
+  padding: 20px;
+}
+
+.all .nav ul li a {
+  font-size: 42px;
+  font-family: "Bebas Neue", cursive;
+  color: black;
+  padding: 10px;
+  position: relative;
+}
+
+.all .nav ul li a:hover {
+  text-decoration: none;
+}
+
+.all .nav ul li a::after {
+  content: '';
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left 0;
+          transform-origin: left 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 100%;
+  visibility: hidden;
+}
+
+.all .nav ul li a:hover::after {
+  background: #e54b4b;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  visibility: visible;
+}
+
+.all .nav li.active {
+  background-color: darkcyan;
+}
+
+.all .page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.all .remove {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.all .about {
+  background-color: white;
+  z-index: 5;
+}
+
+.all .about .row {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.all .about .row span {
+  text-align: left;
+}
+
+.all .about .row span h1 {
+  font-size: 53px;
+  color: black;
+  font-family: "Bebas Neue", cursive;
+  line-height: 1.5;
+}
+
+.all .about .row span p {
+  font-size: 32px;
+  color: black;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+}
+
+.all .about .row .photos {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all .about .row .photos .swiper-container {
+  max-width: 80%;
+  max-height: 70%;
+}
+
+.all .about .row .photos .swiper-container img {
+  height: 700px;
+  width: 100%;
+}
+
+.all .corner {
+  background-color: white;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+}
+
+.all .corner .row {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.all .corner .row .content {
+  max-width: 80%;
+  text-align: left;
+  margin: 178px 0 50px 400px;
+}
+
+.all .corner .row .content h1 {
+  font-size: 53px;
+  color: black;
+  font-family: "Bebas Neue", cursive;
+  line-height: 1.5;
+}
+
+.all .corner .row .content p {
+  font-size: 32px;
+  color: black;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+}
+
+.all .corner .row .imgs {
+  margin-left: 400px;
+}
+
+.all .corner .row .imgs .corner_swiper {
+  height: 60%;
+}
+
+.all .corner .row .imgs .corner_swiper .swiper-slide img {
+  width: 100%;
+}
+
+.all .product {
+  background-color: white;
+  z-index: 3;
+}
+
+.all .product .row {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all .product .row .card {
+  border: none;
+  height: 70%;
+  margin-right: 40px;
+}
+
+.all .product .row .card img {
+  height: 500px;
+  text-align: center;
+}
+
+.all .product .row .card .card-body {
+  text-align: center;
+}
+
+.all .product .row .card .card-body h5 {
+  font-size: 40px;
+  font-family: "Bebas Neue", cursive;
+  line-height: 48px;
+}
+
+.all .product .row .card .card-body p {
+  font-size: 28px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.all .product .modal img {
+  width: 200px;
+}
+
+.all .product .modal p {
+  font-size: 32px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.all .news {
+  background-color: white;
+  z-index: 2;
+}
+
+.all .news .inner {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.all .news .inner .grid {
+  position: relative;
+}
+
+.all .news .inner .grid .item {
+  display: block;
+  position: absolute;
+  margin: 20px;
+  z-index: 1;
+  background: url("https://picsum.photos/seed/picsum/300") center/cover no-repeat;
+  color: #fff;
+}
+
+.all .news .inner .grid .item:nth-child(3n+1) {
+  width: 400px;
+  height: 300px;
+}
+
+.all .news .inner .grid .item:nth-child(3n+2) {
+  width: 400px;
+  height: 400px;
+}
+
+.all .news .inner .grid .item:nth-child(3n) {
+  width: 400px;
+  height: 350px;
+}
+
+.all .news .inner .grid .item.muuri-item-dragging {
+  z-index: 3;
+}
+
+.all .news .inner .grid .item.muuri-item-releasing {
+  z-index: 2;
+}
+
+.all .news .inner .grid .item.muuri-item-hidden {
+  z-index: 0;
+}
+
+.all .news .inner .grid .item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.all .shopping_cart {
+  position: fixed;
+  top: 75px;
+  right: 139px;
+  z-index: 10;
+}
+
+.all .shopping_cart img {
+  width: 65px;
+}
+
+.all .footer {
+  width: 100%;
+  /* height:; */
+  background-color: #6f6f6f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 3%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+
+.all .footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+}
+
+.all .footer ul li {
+  list-style: none;
+  font-size: 36px;
+  font-family: "Noto Sans TC", sans-serif;
+  padding: 20px;
+}
+
+.all .footer ul li a {
+  text-decoration: none;
+}
+
+.all .footer ul .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all .footer ul .phone img {
+  width: 26px;
+  height: 26px;
+  margin-right: 25px;
+}
+
+.all .footer ul .phone p {
+  font-size: 53px;
+  line-height: 64px;
+  font-family: "Gupter", serif;
+  margin: 0;
+}
+
+.all .footer ul .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all .footer ul .address img {
+  width: 21px;
+  height: 29px;
+  margin-right: 25px;
+}
+
+.all .footer ul .address p {
+  font-size: 48px;
+  line-height: 57px;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+}
+
+.all .footer ul .facebook img {
+  width: 58px;
+}
+
+.all .footer ul .line img {
+  width: 58px;
+}
+
+.all .footer ul .instagram img {
+  width: 58px;
+}
+
+.all .footer ul .copyright p {
+  font-size: 24px;
+  font-family: "Gupter", serif;
+}
+/*# sourceMappingURL=project_style.css.map */

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/project_style.css">
+    <!-- <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: greenyellow;
+        }
+
+        #index {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('../img/IMG_5476.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #index a {
+            position: relative;
+            top: -1000px;
+            left: calc(50% - 90px);
+            animation: show;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes show {
+            0% {
+                position: relative;
+                top: -90px;
+            }
+
+
+            100% {
+                top: calc(50% - 90px);
+            }
+        }
+
+        #index a img {
+            width: 180px;
+        }
+
+        #index a img:hover {
+            -webkit-animation: shine 2s linear infinite alternate;
+            animation: shine 2s linear infinite alternate;
+        }
+
+        @keyframes shine {
+            0% {
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .all {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            /* 進版時不顯示除了index以外的頁面 */
+            /* 點擊logo後變更下列屬性 */
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /*插入導覽列*/
+        .nav {
+            position: fixed;
+            top: 50%;
+            left: 2%;
+            z-index: 10;
+        }
+        .nav .logo img{
+            width: 150px;
+        }
+
+        .nav ul li {
+            width: 10px;
+            height: 10px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
+            cursor: pointer;
+            border-radius: 50%;
+            list-style: none;
+
+        }
+
+        .nav ul li.active {
+            background-color: darkcyan;
+        }
+
+        /*每頁顯示的圖片*/
+        .p01 {
+            /* background-image: url(https://placeimg.com/1000/1000/animals); */
+            background-color: black;
+            background-size: cover;
+            z-index: 5;
+        }
+
+        .p02 {
+            /* background-image: url(https://placeimg.com/1000/1000/arch); */
+            background-color: red;
+            background-size: cover;
+            z-index: 4;
+        }
+
+        .p03 {
+            /* background-image: url(https://placeimg.com/1000/1000/nature); */
+            background-color: yellow;
+            background-size: cover;
+            z-index: 3;
+        }
+
+        .p04 {
+            /* background-image: url(https://placeimg.com/1000/1000/people); */
+            background-color: green;
+            background-size: cover;
+            z-index: 2;
+        }
+
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: 2s;
+        }
+
+        .remove {
+            transform: translateY(-100%);
+        }
+
+        .shopping_cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .shopping_cart img {
+            width: 70px;
+        }
+
+        .footer {
+            width: 100%;
+            /* height:; */
+            background-color: #6f6f6f;
+            display: flex;
+            padding: 5px 3%;
+            position: fixed;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .footer ul {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            margin: 0;
+        }
+
+        .footer ul li {
+            list-style: none;
+            font-size: 36px;
+            font-family: "Noto Sans TC", sans-serif;
+            padding: 20px;
+        }
+
+        .footer ul li p {
+            margin: 0;
+        }
+
+        .footer ul li img {
+            width: 40px;
+            margin-right: 5px;
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div id="index">
+        <a href="#about">
+            <img class="start" src="./img/logo.png" alt="">
+        </a>
+    </div>
+    <div class="all">
+        <div class="nav">
+            <div class="logo">
+                <a href="#index">
+                    <img src="./img/logo.png" alt="">
+                </a>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="#about">關於庭園</a>
+                </li>
+                <li>
+                    <a href="#corner">庭園一隅</a>
+                </li>
+                <li>
+                    <a href="#product">庭園作物</a>
+                </li>
+                <li>
+                    <a href="#news">庭園農誌</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="about page" id="about">
+            <div class="row">
+                <div class="col-3">
+                    <span>
+                        <h1>人物</h1>
+                        <p>日出而作，日落而息，回歸最純樸的生活，來充實退休後的人生。吳爸爸及吳媽媽攜手投入並全心經營溫室，要證明愛不只能發電，還能是最棒的肥料。</p>
+                    </span>
+                    <span>
+                        <h1>理念</h1>
+                        <p>取名庭園，志在成為每個人院子裡的一方土地，帶給大家最新鮮的水果。我們堅持使用無毒農藥及天然酵素來栽種，期盼用我們滴下的汗水灌溉，能換取吃下甜美果實的安心笑容。</p>
+                    </span>
+                </div>
+
+                <div class="photos col-md-4 col-lg-7">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_0691.JPG" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_5475.JPG" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_0717.JPG" alt="">
+                            </div>
+
+
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="corner page" id="corner">
+            <div class="row">
+                <div class="content col-5">
+                    <h1>
+                        溫室的優點
+                    </h1>
+                    <p>
+                        溫室，就像一棟專為植物設計的豪宅，讓植物在裡頭能安心成長。不僅能克服氣候的影響來穩定作物產量，還能降低病蟲害發生率來減少農藥使用，維護消費者食之健康。
+                    </p>
+                </div>
+                <div class="imgs col-8">
+                    <div class="swiper-container corner_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_4599.JPG" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_5084.JPG" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/IMG_4712.JPG" alt="">
+                            </div>
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product page" id="product">
+            <div class="row">
+                <div class="card  col-md-3">
+                    <img src="./img/melon.jpg" class="card-img-top" alt="melon">
+                    <div class="card-body">
+                        <h5 class="card-title">美濃瓜</h5>
+                        <p class="card-text">可遠觀亦可品嘗！<br />皮膚白皙、自帶香氣，水果屆的貴婦！
+                        </p>
+                        <button type="button" class="modal_btn btn btn-primary btn-lg" data-toggle="modal"
+                            data-target="#melon_modal">
+                            了解/購買
+                        </button>
+
+                    </div>
+                </div>
+                <div class="card col-md-3">
+                    <img src="./img/tomato03.jpg" class="img-fluid card-img-top" alt="tomato">
+                    <div class="card-body">
+                        <h5 class="card-title">小番茄</h5>
+                        <p class="card-text">遙迢淑女，君子好逑<br />小巧動人，無論是大人小孩都愛不釋手！
+                        </p>
+                        <button type="button" class="modal_btn btn-lg btn btn-primary" data-toggle="modal"
+                            data-target="#tomato_modal">
+                            了解/購買
+                        </button>
+                    </div>
+                </div>
+                <div class="card col-md-3">
+                    <img src="./img/青椒.jpg" class="card-img-top" alt="青椒">
+                    <div class="card-body">
+                        <h5 class="card-title">青椒</h5>
+                        <p class="card-text">青翠鮮甜，一改既往！<br />除去了厚重外殼，定能成為挑食者的新歡！
+                        </p>
+                        <button type="button" class="modal_btn btn-lg btn btn-primary" data-toggle="modal"
+                            data-target="#green_pepper_modal">
+                            了解/購買
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+
+            <div id="melon_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">美濃瓜</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body d-flex">
+
+                            <img class="img-fluid" src="./img/IMG_4875.JPG" alt="">
+                            <p>成熟瓜果表皮呈銀白略帶黃白色，果肉為淡白綠色，靠近便能聞到高貴而淡雅的香氣，口感香甜！每棵瓜藤只留1~2個果實(一般留7-10果實)，重質不重量的栽培方式，就是我們的品質保證！<br />
+                                <br />※每箱淨重10台斤(六公斤)，約含12顆美濃瓜
+                            </p>
+                        </div>
+                        <div class="modal-footer d-flex">
+                            <input type="number" min="1" placeholder="1">箱
+                            <button type="button" class="btn btn-primary">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tomato_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">小番茄</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body d-flex">
+                            <img class="img-fluid" src="./img/IMG_5345.JPG" alt="">
+                            <p>果實呈現橢圓形、顏色為正紅色。皮薄汁多、甜度高。採收期11月-4月，每顆番茄都等到完全熟透後才摘下，再透過人工篩選包裝，只把最好的品質送到大家的手中。<br /><br />
+                                ※每箱淨重10台斤(10盒)。
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="number" min="1" placeholder="1">箱
+                            <button type="button" class="btn btn-primary">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="green_pepper_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-xl " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">青椒</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="img-fluid" class="modal-body d-flex">
+                            <img src="./img/IMG_9077.JPG" alt="">
+                            <p>有別於一般戶外種植的青椒，透過溫室栽培的青椒少了外殼厚重的口感，更多了清甜的好滋味，希望讓不愛吃青椒的小孩，都能愛上青椒。<br /><br />
+                                ※每箱淨重5台斤(3公斤)。
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="number" min="1" placeholder="1">箱
+                            <button type="button" class="btn btn-primary">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news page" id="news">
+            <div class="inner">
+                <div class="grid ">    
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- <img src="https://picsum.photos" alt=""> -->
+                        </div>
+                    </div>
+    
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            <div class="my-custom-content">
+                                Yippee!
+                            </div>
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+                    <div class="item col-3">
+                        <div class="item-content">
+                            <!-- Safe zone, enter your custom markup -->
+                            This can be anything.
+                            <!-- Safe zone ends -->
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="shopping_cart">
+            <a href="">
+                <img src="./img/shopping_cart2.png" alt="">
+            </a>
+        </div>
+        <div class="footer">
+            <ul class="row">
+                <li class="phone col-md-2">
+                    <img src="./img/phone.png" alt="">
+                    <p>0987654321</p>
+                </li>
+                <li class="address col-md-5">
+                    <img src="./img/location.png" alt="">
+                    <p>雲林縣莿桐鄉埔子村3-33號</p>
+                </li>
+
+                <li class="facebook col-md-1">
+                    <a href="">
+                        <img src="./img/facebook.png" alt="">
+                    </a>
+                </li>
+                <li class="line col-md-1">
+                    <a href="">
+                        <img src="./img/line.png" alt="">
+                    </a>
+                </li>
+                <li class="instagram col-md-1">
+                    <a href="">
+                        <img src="./img/instagram.png" alt="">
+                    </a>
+                </li>
+
+
+                <li class="copyright col-md-2">
+                    <p>2019©Mr.WUPAPA</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- jquery mousewheel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <!-- muuri -->
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+
+    <script src="./js/mrwupapa.js"></script>
+
+</body>
+
+</html>
