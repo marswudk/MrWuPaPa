@@ -56,7 +56,7 @@ $('.start').click(function() {
 var number_li = $('.nav li').length
 n = 1
 
-$('.page').on('mousewheel', function (e) {
+$('.page').on('mousewheel', function scroll (e) {
   // console.log(e.deltaY);
   if (e.deltaY == -1) {
     if (n < number_li) {
@@ -74,7 +74,7 @@ $('.page').on('mousewheel', function (e) {
 
     }
   }
-  console.log("scroll:", n);
+  // setTimeout(scroll , 1500)
 
 })
 

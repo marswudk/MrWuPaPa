@@ -115,9 +115,9 @@ body {
 
 
         ul {
-            border: 8px solid pink;
 
-            // padding: 50px;
+            background-color: #D0DA17;
+            
             li {
 
                 box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
@@ -152,7 +152,7 @@ body {
                     }
 
                     &:hover::after {
-                        background: #e54b4b;
+                        background: #D86E6E;
                         transform: scaleX(1);
                         visibility: visible;
 
@@ -163,8 +163,9 @@ body {
         }
 
         li.active {
-            background-color: darkcyan;
+            background-color: #F29F00;
         }
+        
 
 
     }
@@ -174,16 +175,17 @@ body {
         height: 100%;
         position: absolute;
         transition: 2s;
+        background-color: #D5E7E6;
     }
 
     .remove {
-        transform: translateY(-100%);
+        transform: translateY(-100%) ;
     }
 
     /*每頁顯示的圖片*/
     .about {
 
-        background-color: white;
+        
         z-index: 5;
 
         .row {
@@ -231,7 +233,7 @@ body {
     }
 
     .corner {
-        background-color: white;
+        
         z-index: 4;
         width: 100%;
         height: 100%;
@@ -244,7 +246,7 @@ body {
             .content {
                 max-width: 80%;
                 text-align: left;
-                margin: 178px 0 50px 400px;
+                margin: 178px 0 50px 420px;
 
                 h1 {
                     font-size: $font_size_title;
@@ -262,7 +264,7 @@ body {
             }
 
             .imgs {
-                margin-left: 400px;
+                margin-left: 420px;
 
                 .corner_swiper {
                     height: 60%;
@@ -279,22 +281,23 @@ body {
     }
 
     .product {
-        background-color: white;
+        
         z-index: 3;
 
         .row {
-            width: 100%;
+            width: 80%;
             height: 100%;
+            margin: 0 auto;
             justify-content: flex-end;
             align-items: center;
 
             .card {
                 border: none;
-                height: 70%;
+                // height: 70%;
                 margin-right: 40px;
 
                 img {
-                    height: 500px;
+                    height: 450px;
                     text-align: center;
                 }
 
@@ -311,6 +314,15 @@ body {
                         font-size: $font_size_card_text;
                         font-family: $font_family_text;
 
+                    }
+                    #melon_btn{
+                        background-color: #FAD524;
+                    }
+                    #tomato_btn{
+                        background-color: #DB2426;
+                    }
+                    #pepper_btn{
+                        background-color: #408600;
                     }
                 }
             }
@@ -330,54 +342,60 @@ body {
     }
 
     .news {
-        background-color: white;
+       
         z-index: 2;
-        .inner{
+
+        .inner {
             width: 70%;
             height: 100%;
             margin: 0 auto;
-            padding: 50px;
+            padding: 50px 50px 100px;
+
             .grid {
                 position: relative;
-    
+                width: 100%;
+                
+
                 .item {
                     display: block;
                     position: absolute;
                     margin: 20px;
-                    z-index: 1;
-                    background: url('https://picsum.photos/seed/picsum/300') center /cover no-repeat;
+                    z-index: 1;                   
+                    
                     color: #fff;
-    
-                    &:nth-child(3n+1) {
-                        width: 400px;
-                        height: 300px;
+
+                    // &:nth-child(3n+1) {
+                    //     width: 35%;
+                        
+                    // }
+
+                    // &:nth-child(3n+2) {
+                    //     width: 40%;
+                        
+                    // }
+
+                    // &:nth-child(3n) {
+                    //     width: 25%;
+                        
+                    // }
+
+                    img{
+                        width: 100%;
                     }
-    
-                    &:nth-child(3n+2) {
-                        width: 400px;
-                        height: 400px;
-                    }
-    
-                    &:nth-child(3n) {
-                        width: 400px;
-                        height: 350px;
-                    }
-    
-    
                 }
-    
+
                 .item.muuri-item-dragging {
                     z-index: 3;
                 }
-    
+
                 .item.muuri-item-releasing {
                     z-index: 2;
                 }
-    
+
                 .item.muuri-item-hidden {
                     z-index: 0;
                 }
-    
+
                 .item-content {
                     position: relative;
                     width: 100%;
@@ -385,7 +403,7 @@ body {
                 }
             }
         }
-        
+
     }
 
     .shopping_cart {

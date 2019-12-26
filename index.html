@@ -11,199 +11,10 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="./css/project_style.css">
-    <!-- <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        body {
-            overflow: hidden;
-            background-color: greenyellow;
-        }
-
-        #index {
-            width: 100vw;
-            height: 100vh;
-            background-image: url('../img/IMG_5476.JPG');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        #index a {
-            position: relative;
-            top: -1000px;
-            left: calc(50% - 90px);
-            animation: show;
-            animation-duration: 3s;
-            animation-delay: 1s;
-            animation-fill-mode: forwards;
-            animation-timing-function: linear;
-
-        }
-
-        @keyframes show {
-            0% {
-                position: relative;
-                top: -90px;
-            }
-
-
-            100% {
-                top: calc(50% - 90px);
-            }
-        }
-
-        #index a img {
-            width: 180px;
-        }
-
-        #index a img:hover {
-            -webkit-animation: shine 2s linear infinite alternate;
-            animation: shine 2s linear infinite alternate;
-        }
-
-        @keyframes shine {
-            0% {
-                -webkit-transform: scale(1.2);
-                transform: scale(1.2);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        .all {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            /* 進版時不顯示除了index以外的頁面 */
-            /* 點擊logo後變更下列屬性 */
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /*插入導覽列*/
-        .nav {
-            position: fixed;
-            top: 50%;
-            left: 2%;
-            z-index: 10;
-        }
-        .nav .logo img{
-            width: 150px;
-        }
-
-        .nav ul li {
-            width: 10px;
-            height: 10px;
-            margin: 10px;
-            background-color: #fff;
-            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
-            cursor: pointer;
-            border-radius: 50%;
-            list-style: none;
-
-        }
-
-        .nav ul li.active {
-            background-color: darkcyan;
-        }
-
-        /*每頁顯示的圖片*/
-        .p01 {
-            /* background-image: url(https://placeimg.com/1000/1000/animals); */
-            background-color: black;
-            background-size: cover;
-            z-index: 5;
-        }
-
-        .p02 {
-            /* background-image: url(https://placeimg.com/1000/1000/arch); */
-            background-color: red;
-            background-size: cover;
-            z-index: 4;
-        }
-
-        .p03 {
-            /* background-image: url(https://placeimg.com/1000/1000/nature); */
-            background-color: yellow;
-            background-size: cover;
-            z-index: 3;
-        }
-
-        .p04 {
-            /* background-image: url(https://placeimg.com/1000/1000/people); */
-            background-color: green;
-            background-size: cover;
-            z-index: 2;
-        }
-
-
-        .page {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transition: 2s;
-        }
-
-        .remove {
-            transform: translateY(-100%);
-        }
-
-        .shopping_cart {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
-
-        .shopping_cart img {
-            width: 70px;
-        }
-
-        .footer {
-            width: 100%;
-            /* height:; */
-            background-color: #6f6f6f;
-            display: flex;
-            padding: 5px 3%;
-            position: fixed;
-            bottom: 0;
-            z-index: 10;
-        }
-
-        .footer ul {
-            display: flex;
-            justify-content: space-between;
-            flex: 1;
-            margin: 0;
-        }
-
-        .footer ul li {
-            list-style: none;
-            font-size: 36px;
-            font-family: "Noto Sans TC", sans-serif;
-            padding: 20px;
-        }
-
-        .footer ul li p {
-            margin: 0;
-        }
-
-        .footer ul li img {
-            width: 40px;
-            margin-right: 5px;
-        }
-
-        .footer ul li a {
-            text-decoration: none;
-        }
-    </style> -->
+    
 </head>
 
 <body>
@@ -220,8 +31,8 @@
                 </a>
             </div>
             <ul>
-                <li class="active">
-                    <a href="#about">關於庭園</a>
+                <li>
+                    <a  class="active" href="#about">關於庭園</a>
                 </li>
                 <li>
                     <a href="#corner">庭園一隅</a>
@@ -313,7 +124,7 @@
                         <h5 class="card-title">美濃瓜</h5>
                         <p class="card-text">可遠觀亦可品嘗！<br />皮膚白皙、自帶香氣，水果屆的貴婦！
                         </p>
-                        <button type="button" class="modal_btn btn btn-primary btn-lg" data-toggle="modal"
+                        <button id="melon_btn" type="button" class="modal_btn btn  btn-lg" data-toggle="modal"
                             data-target="#melon_modal">
                             了解/購買
                         </button>
@@ -326,7 +137,7 @@
                         <h5 class="card-title">小番茄</h5>
                         <p class="card-text">遙迢淑女，君子好逑<br />小巧動人，無論是大人小孩都愛不釋手！
                         </p>
-                        <button type="button" class="modal_btn btn-lg btn btn-primary" data-toggle="modal"
+                        <button id="tomato_btn" type="button" class="modal_btn btn-lg btn " data-toggle="modal"
                             data-target="#tomato_modal">
                             了解/購買
                         </button>
@@ -338,7 +149,7 @@
                         <h5 class="card-title">青椒</h5>
                         <p class="card-text">青翠鮮甜，一改既往！<br />除去了厚重外殼，定能成為挑食者的新歡！
                         </p>
-                        <button type="button" class="modal_btn btn-lg btn btn-primary" data-toggle="modal"
+                        <button id="pepper_btn" type="button" class="modal_btn btn-lg btn " data-toggle="modal"
                             data-target="#green_pepper_modal">
                             了解/購買
                         </button>
@@ -418,69 +229,51 @@
         </div>
         <div class="news page" id="news">
             <div class="inner">
-                <div class="grid ">    
-                    <div class="item col-3">
+                <div class="grid">    
+                    <div class="item col-4 ">
                         <div class="item-content">
-                            <!-- <img src="https://picsum.photos" alt=""> -->
+                            <img src="https://i.picsum.photos/id/0/200/300.jpg" alt="">
                         </div>
                     </div>
     
-                    <div class="item col-3">
+                    <div class="item col-4">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            <div class="my-custom-content">
-                                Yippee!
-                            </div>
-                            <!-- Safe zone ends -->
+                            <img src="./img/FireShot Capture 005 - 庭園溫室栽培 - Home - www.facebook.com.png" alt="">
+                        </div>
+                    </div>
+                    <div class="item col-4">
+                        <div class="item-content">
+                            <img src="./img/FireShot Capture 006 - 庭園溫室栽培 - Home - www.facebook.com.png" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                            <img src="./img/IMG_5345.JPG" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                            <img src="https://i.picsum.photos/id/629/200/300.jpg" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                           <img src="./img/IMG_9077.JPG" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                            <img src="./img/IMG_3038.JPG" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                            <img src="./img/IMG_4875.JPG" alt="">
                         </div>
                     </div>
                     <div class="item col-3">
                         <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
-                        </div>
-                    </div>
-                    <div class="item col-3">
-                        <div class="item-content">
-                            <!-- Safe zone, enter your custom markup -->
-                            This can be anything.
-                            <!-- Safe zone ends -->
+                            <img src="https://i.picsum.photos/id/866/200/300.jpg" alt="">
                         </div>
                     </div>
     
