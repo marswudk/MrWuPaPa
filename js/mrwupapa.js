@@ -125,3 +125,9 @@ $('.nav li').click(function () {
 
 
 })
+// mobile nav
+$('.nav_btn').click(function(){
+  $('.bar').toggleClass('rotate')
+  $('.mobile_nav').toggleClass('rotate')
+  console.log($('.mobile_nav'));
+})
