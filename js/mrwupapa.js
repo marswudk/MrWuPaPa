@@ -63,7 +63,7 @@ var corner_swiper = new Swiper('.corner_swiper',{
 
 
 // 換頁效果
-var number_li = $('.nav li').length
+var number_li = $('.nav_list li').length
 n = 1
 
 $('.page').on('mousewheel', function scroll (e) {
@@ -72,15 +72,15 @@ $('.page').on('mousewheel', function scroll (e) {
     if (n < number_li) {
       n++
       $(`.page:nth-child(${n})`).addClass('remove')
-      $('.nav li').removeClass('active')
-      $(`.nav li:nth-child(${n})`).addClass('active')
+      $('.nav_list li').removeClass('active')
+      $(`.nav_list li:nth-child(${n})`).addClass('active')
     }
   } else {
     if (n > 1) {
       n--
       $(`.page:nth-child(${n + 1})`).removeClass('remove')
-      $('.nav li').removeClass('active')
-      $(`.nav li:nth-child(${n})`).addClass('active')
+      $('.nav_list li').removeClass('active')
+      $(`.nav_list li:nth-child(${n})`).addClass('active')
 
     }
   }
@@ -95,7 +95,7 @@ $('.nav li').click(function () {
   //check 是否跳頁 math.abs()->絕對值>1表示有跳頁
   if (Math.abs(n - index) > 1) {
     //跳頁
-    $('.nav li').removeClass('active')
+    $('.nav_list li').removeClass('active')
     $(this).addClass('active')
 
     //add this
@@ -111,7 +111,7 @@ $('.nav li').click(function () {
     console.log("click跳頁:", n);
 
   } else {
-    $('.nav li').removeClass('active')
+    $('.nav_list li').removeClass('active')
     $(this).addClass('active')
     // $('.page').removeClass('remove')
     $(`.page:nth-child(${index + 1})`).removeClass('remove')
