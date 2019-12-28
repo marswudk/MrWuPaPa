@@ -7,10 +7,10 @@
 
 body {
     overflow: hidden;
-    background-color: greenyellow;
+    // background-color: greenyellow;
 }
 
-#index {
+.index {
     width: 100vw;
     height: 100vh;
     background-image: url('../img/IMG_5476.JPG');
@@ -18,7 +18,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    z-index: 100;
+    // opacity: 1;
+    // pointer-events: all;
 
+    // .index.dispear {
+    //     opacity: 0;
+    //     pointer-events: none;
+
+    // }
+    // 沒作用?
     a {
         position: relative;
         top: -1000px;
@@ -45,19 +54,21 @@ body {
             width: 288px;
 
             &:hover {
-                animation: shine 2s linear infinite alternate;
+                animation: shine 2s linear infinite;
             }
         }
 
         @keyframes shine {
             0% {
-                -webkit-transform: scale(1.2);
-                transform: scale(1.2);
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.4);
             }
 
             100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
+                transform: rotate(360deg) scale(1);
             }
         }
 
@@ -65,16 +76,8 @@ body {
 
 }
 
-#index.dispear {
-    opacity: 0;
-    pointer-events: none;
 
-}
 
-// .all.show{
-//     opacity: 1;   
-//     pointer-events: all;
-// }
 
 
 
@@ -95,7 +98,13 @@ body {
     /* 點擊logo後變更下列屬性 */
     // opacity: 0;
     // pointer-events: none;
+    // display: none;
 
+    // .all.show {
+    //     opacity: 1;
+    //     pointer-events: all;
+        
+    // }
 
     .nav {
         position: fixed;
@@ -107,6 +116,10 @@ body {
         .logo {
             display: flex;
             justify-content: center;
+            position: absolute;
+            top: -75px;
+            left: 37px;
+
 
             img {
                 width: 150px;
@@ -117,13 +130,16 @@ body {
         ul {
 
             background-color: #D0DA17;
-            
+
             li {
 
                 box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
                 cursor: pointer;
                 list-style: none;
                 padding: 20px;
+                &:first-child{
+                    margin-top: 80px;
+                }
 
 
                 a {
@@ -165,7 +181,7 @@ body {
         li.active {
             background-color: #F29F00;
         }
-        
+
 
 
     }
@@ -179,13 +195,13 @@ body {
     }
 
     .remove {
-        transform: translateY(-100%) ;
+        transform: translateY(-100%);
     }
 
-    /*每頁顯示的圖片*/
+
     .about {
 
-        
+
         z-index: 5;
 
         .row {
@@ -233,7 +249,7 @@ body {
     }
 
     .corner {
-        
+
         z-index: 4;
         width: 100%;
         height: 100%;
@@ -281,7 +297,7 @@ body {
     }
 
     .product {
-        
+
         z-index: 3;
 
         .row {
@@ -315,71 +331,75 @@ body {
                         font-family: $font_family_text;
 
                     }
-                    #melon_btn{
+
+                    #melon_btn {
                         background-color: #FAD524;
                     }
-                    #tomato_btn{
+
+                    #tomato_btn {
                         background-color: #DB2426;
                     }
-                    #pepper_btn{
+
+                    #pepper_btn {
                         background-color: #408600;
                     }
                 }
             }
+
+            .modal {
+                img {
+                    width: 200px;
+                }
+
+                p {
+                    font-size: $font_size_text;
+                    font-family: $font_family_text;
+                }
+            }
         }
 
-        .modal {
-            img {
-                width: 200px;
-            }
 
-            p {
-                font-size: $font_size_text;
-                font-family: $font_family_text;
-            }
-        }
 
     }
 
     .news {
-       
+
         z-index: 2;
 
         .inner {
-            width: 70%;
+            width: 80%;
             height: 100%;
             margin: 0 auto;
             padding: 50px 50px 100px;
 
             .grid {
                 position: relative;
-                width: 100%;
-                
+                margin-left: 50px;
+                // width: 100%;
+
 
                 .item {
                     display: block;
                     position: absolute;
                     margin: 20px;
-                    z-index: 1;                   
-                    
-                    color: #fff;
+                    z-index: 1;
 
-                    // &:nth-child(3n+1) {
-                    //     width: 35%;
-                        
-                    // }
+                    &:nth-child(3n+1) {
+                        width: 33%;
 
-                    // &:nth-child(3n+2) {
-                    //     width: 40%;
-                        
-                    // }
+                    }
 
-                    // &:nth-child(3n) {
-                    //     width: 25%;
-                        
-                    // }
+                    &:nth-child(3n+2) {
+                        width: 34%;
 
-                    img{
+                    }
+
+                    &:nth-child(3n) {
+                        width: 33%;
+
+                    }
+
+                    img {
                         width: 100%;
                     }
                 }

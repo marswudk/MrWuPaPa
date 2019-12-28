@@ -1,12 +1,14 @@
 // bootstrap
 // modal
-$('.modal').on('shown.bs.modal', function () {
-  $('.modal_btn').trigger('focus')
-});
+// $('.modal').on('shown.bs.modal', function () {
+//   $('.modal_btn').trigger('focus')
+// });
 
 // muuri
 var grid = new Muuri('.grid',{
   dragEnabled: true,
+  // showDuration: 600,
+  // layoutEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
 });
 
 // swiper
@@ -45,12 +47,20 @@ var corner_swiper = new Swiper('.corner_swiper',{
     el: '.swiper-pagination',
   },
 });
-// 進版畫面跳關於庭園
 
-$('.start').click(function() {
-    $('#index').addClass('disapear')
-    // $('.all').addClass('show')
-})
+
+// 進版畫面跳關於庭園
+// $(document).ready(function(){
+//   $('.start').click(function() {
+//     $('#index').addClass('disapear')
+//     $('.all').addClass('show')
+// })
+// $('.back_to_index').click(function(){
+//   $('#index').removeClass('disapear')
+//     $('.all').removeClass('show')
+// })
+// })
+
 
 // 換頁效果
 var number_li = $('.nav li').length

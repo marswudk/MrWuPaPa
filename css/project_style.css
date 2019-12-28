@@ -7,10 +7,9 @@
 
 body {
   overflow: hidden;
-  background-color: greenyellow;
 }
 
-#index {
+.index {
   width: 100vw;
   height: 100vh;
   background-image: url("../img/IMG_5476.JPG");
@@ -18,9 +17,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  z-index: 100;
 }
 
-#index a {
+.index a {
   position: relative;
   top: -1000px;
   left: calc(50% - 144px);
@@ -56,40 +56,43 @@ body {
   }
 }
 
-#index a img {
+.index a img {
   width: 288px;
 }
 
-#index a img:hover {
-  -webkit-animation: shine 2s linear infinite alternate;
-          animation: shine 2s linear infinite alternate;
+.index a img:hover {
+  -webkit-animation: shine 2s linear infinite;
+          animation: shine 2s linear infinite;
 }
 
 @-webkit-keyframes shine {
   0% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(1.4);
+            transform: rotate(180deg) scale(1.4);
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
   }
 }
 
 @keyframes shine {
   0% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(1.4);
+            transform: rotate(180deg) scale(1.4);
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
   }
-}
-
-#index.dispear {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .all {
@@ -99,7 +102,6 @@ body {
   overflow: hidden;
   /* 進版時不顯示除了index以外的頁面 */
   /* 點擊logo後變更下列屬性 */
-  /*每頁顯示的圖片*/
 }
 
 .all .nav {
@@ -120,6 +122,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  top: -75px;
+  left: 37px;
 }
 
 .all .nav .logo img {
@@ -136,6 +141,10 @@ body {
   cursor: pointer;
   list-style: none;
   padding: 20px;
+}
+
+.all .nav ul li:first-child {
+  margin-top: 80px;
 }
 
 .all .nav ul li a {
@@ -348,11 +357,11 @@ body {
   background-color: #408600;
 }
 
-.all .product .modal img {
+.all .product .row .modal img {
   width: 200px;
 }
 
-.all .product .modal p {
+.all .product .row .modal p {
   font-size: 32px;
   font-family: "Noto Sans TC", sans-serif;
 }
@@ -362,7 +371,7 @@ body {
 }
 
 .all .news .inner {
-  width: 70%;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
   padding: 50px 50px 100px;
@@ -370,7 +379,7 @@ body {
 
 .all .news .inner .grid {
   position: relative;
-  width: 100%;
+  margin-left: 50px;
 }
 
 .all .news .inner .grid .item {
@@ -378,7 +387,18 @@ body {
   position: absolute;
   margin: 20px;
   z-index: 1;
-  color: #fff;
+}
+
+.all .news .inner .grid .item:nth-child(3n+1) {
+  width: 33%;
+}
+
+.all .news .inner .grid .item:nth-child(3n+2) {
+  width: 34%;
+}
+
+.all .news .inner .grid .item:nth-child(3n) {
+  width: 33%;
 }
 
 .all .news .inner .grid .item img {

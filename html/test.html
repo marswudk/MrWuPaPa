@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+    img {
+        width: 200px;
+    }
+
+    p {
+        font-size: 40px;
+        font-family: 微軟正黑體;
+    }
+</style>
+
+<body>
+    <div class="product page" id="product">
+        <div class="row">
+            <div class="card  col-md-3">
+                <img src="../img/melon.jpg" class="card-img-top" alt="melon">
+                <div class="card-body">
+                    <h5 class="card-title">美濃瓜</h5>
+                    <p class="card-text">可遠觀亦可品嘗！<br />皮膚白皙、自帶香氣，水果屆的貴婦！
+                    </p>
+                    <button id="melon_btn" type="button" class="modal_btn btn  btn-lg" data-toggle="modal"
+                        data-target="#melon_modal">
+                        了解/購買
+                    </button>
+
+                </div>
+            </div>
+            <div id="melon_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">美濃瓜</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body d-flex">
+
+                            <img class="img-fluid" src="../img/IMG_4875.JPG" alt="">
+                            <p>成熟瓜果表皮呈銀白略帶黃白色，果肉為淡白綠色，靠近便能聞到高貴而淡雅的香氣，口感香甜！每棵瓜藤只留1~2個果實(一般留7-10果實)，重質不重量的栽培方式，就是我們的品質保證！<br />
+                                <br />※每箱淨重10台斤(六公斤)，約含12顆美濃瓜
+                            </p>
+                        </div>
+                        <div class="modal-footer d-flex">
+                            <input type="number" min="1" placeholder="1">箱
+                            <button type="button" class="btn btn-primary">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 小番茄 -->
+            <div class="card col-md-3">
+                <img src="../img/tomato03.jpg" class="img-fluid card-img-top" alt="tomato">
+                <div class="card-body">
+                    <h5 class="card-title">小番茄</h5>
+                    <p class="card-text">遙迢淑女，君子好逑<br />小巧動人，無論是大人小孩都愛不釋手！
+                    </p>
+                    <button id="tomato_btn" type="button" class="modal_btn btn-lg btn " data-toggle="modal"
+                        data-target="#tomato_modal">
+                        了解/購買
+                    </button>
+                </div>
+            </div>
+            <div id="tomato_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">小番茄</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body d-flex">
+                            <img class="img-fluid" src="../img/IMG_5345.JPG" alt="">
+                            <p>果實呈現橢圓形、顏色為正紅色。皮薄汁多、甜度高。採收期11月-4月，每顆番茄都等到完全熟透後才摘下，再透過人工篩選包裝，只把最好的品質送到大家的手中。<br /><br />
+                                ※每箱淨重10台斤(10盒)。
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="number" min="1" placeholder="1">箱
+                            <button type="button" class="btn btn-primary">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 青椒 -->
+            <div class="card col-md-3">
+                <img src="../img/青椒.jpg" class="card-img-top" alt="青椒">
+                <div class="card-body">
+                    <h5 class="card-title">青椒</h5>
+                    <p class="card-text">青翠鮮甜，一改既往！<br />除去了厚重外殼，定能成為挑食者的新歡！
+                    </p>
+                    <button id="pepper_btn" type="button" class="modal_btn btn-lg btn " data-toggle="modal"
+                        data-target="#green_pepper_modal">
+                        了解/購買
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="green_pepper_modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-xl " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">青椒</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="img-fluid" class="modal-body d-flex">
+                        <img src="../img/IMG_9077.JPG" alt="">
+                        <p>有別於一般戶外種植的青椒，透過溫室栽培的青椒少了外殼厚重的口感，更多了清甜的好滋味，希望讓不愛吃青椒的小孩，都能愛上青椒。<br /><br />
+                            ※每箱淨重5台斤(3公斤)。
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="number" min="1" placeholder="1">箱
+                        <button type="button" class="btn btn-primary">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
