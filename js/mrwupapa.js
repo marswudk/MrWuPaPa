@@ -74,89 +74,91 @@ $(document).ready(function () {
 
 // $(window).on('resize',function () {
 
-  var width = $(window).width();
-  
-  if (width > 1080) {
-    var number_li = $('.nav_list li').length;
-    n = 1;
-    console.log(width);
+var width = $(window).width();
 
-    $('.page').on('mousewheel', function scroll(e) {
-      // console.log(e.deltaY);
-      if (e.deltaY == -1) {
-        if (n < number_li) {
-          n++
-          
-          $(`.page:nth-child(${n})`).addClass('remove')
-          $('.nav_list li').removeClass('active')
-          $(`.nav_list li:nth-child(${n})`).addClass('active')
+if (width < 1080) {
 
-          if (n == 4) {
-            grid.refreshItems().layout()
-          }
+} else {
+  var number_li = $('.nav_list li').length;
+  n = 1;
+  console.log(width);
 
-        }
-      } else {
-        if (n > 1) {
-          n--
-          $(`.page:nth-child(${n + 1})`).removeClass('remove')
-          $('.nav_list li').removeClass('active')
-          $(`.nav_list li:nth-child(${n})`).addClass('active')
+  $('.page').on('mousewheel', function scroll(e) {
+    // console.log(e.deltaY);
+    if (e.deltaY == -1) {
+      if (n < number_li) {
+        n++
 
-          if (n == 4) {
-            grid.refreshItems().layout()
-          }
-
-        }
-      }
-      // setTimeout(scroll , 1500)
-
-    })
-
-
-    $('.nav_list li').click(function () {
-      var index = $(".nav li").index(this) + 1;
-
-      //check 是否跳頁 math.abs()->絕對值>1表示有跳頁
-      if (Math.abs(n - index) > 1) {
-        //跳頁
+        $(`.page:nth-child(${n})`).addClass('remove')
         $('.nav_list li').removeClass('active')
-        $(this).addClass('active')
-
-        //add this
-        $(`.page`).removeClass('remove')
-
-        //remove page->可以讓最後一頁不新增remove這個class
-        for (let i = 1; i < index; i++) {
-          $(`.page:nth-child(${i + 1})`).addClass('remove')
-        }
-
-        n = index;
+        $(`.nav_list li:nth-child(${n})`).addClass('active')
 
         if (n == 4) {
           grid.refreshItems().layout()
         }
 
-        console.log("click跳頁:", n);
-
-      } else {
+      }
+    } else {
+      if (n > 1) {
+        n--
+        $(`.page:nth-child(${n + 1})`).removeClass('remove')
         $('.nav_list li').removeClass('active')
-        $(this).addClass('active')
-        // $('.page').removeClass('remove')
-        $(`.page:nth-child(${index + 1})`).removeClass('remove')
-        $(`.page:nth-child(${index})`).addClass('remove')
-
-        //update n
-        n = index;
+        $(`.nav_list li:nth-child(${n})`).addClass('active')
 
         if (n == 4) {
           grid.refreshItems().layout()
         }
-        console.log("click不跳頁:", index);
+
+      }
+    }
+    // setTimeout(scroll , 1500)
+
+  })
+
+
+  $('.nav_list li').click(function () {
+    var index = $(".nav li").index(this) + 1;
+
+    //check 是否跳頁 math.abs()->絕對值>1表示有跳頁
+    if (Math.abs(n - index) > 1) {
+      //跳頁
+      $('.nav_list li').removeClass('active')
+      $(this).addClass('active')
+
+      //add this
+      $(`.page`).removeClass('remove')
+
+      //remove page->可以讓最後一頁不新增remove這個class
+      for (let i = 1; i < index; i++) {
+        $(`.page:nth-child(${i + 1})`).addClass('remove')
       }
 
-    })
-  }
+      n = index;
+
+      if (n == 4) {
+        grid.refreshItems().layout()
+      }
+
+      console.log("click跳頁:", n);
+
+    } else {
+      $('.nav_list li').removeClass('active')
+      $(this).addClass('active')
+      // $('.page').removeClass('remove')
+      $(`.page:nth-child(${index + 1})`).removeClass('remove')
+      $(`.page:nth-child(${index})`).addClass('remove')
+
+      //update n
+      n = index;
+
+      if (n == 4) {
+        grid.refreshItems().layout()
+      }
+      console.log("click不跳頁:", index);
+    }
+
+  })
+}
 // })
 
 // mobile nav
