@@ -75,10 +75,9 @@ $(document).ready(function () {
 // $(window).on('resize',function () {
 
 var width = $(window).width();
+console.log(width);
 
-if (width < 1080) {
-
-} else {
+if (width > 1080) {
   var number_li = $('.nav_list li').length;
   n = 1;
   console.log(width);
@@ -158,24 +157,26 @@ if (width < 1080) {
     }
 
   })
+} else {
+  
 }
 // })
 
 // mobile nav
-// $('.nav_btn').click(function () {
-//   $('.bar').toggleClass('rotate')
-//   $('.mobile_nav').toggleClass('rotate')
-//   $('.logo').toggleClass('disapear')
-//   console.log($('.mobile_nav'));
-// })
+$('.nav_btn').click(function () {
+  $('.bar').toggleClass('rotate')
+  $('.mobile_nav').toggleClass('rotate')
+  $('.logo').toggleClass('disapear')
+  console.log($('.mobile_nav'));
+})
 
 // 如果有hash# 在index&all 後面加上class(disapear & show)
-// if (window.location.hash) {
-//   $('.index').addClass('disapear')
-//   $('.all').addClass('show')
+if (window.location.hash) {
+  $('.index').addClass('disapear')
+  $('.all').addClass('show')
 
-// } else {
-//   $('.index').removeClass('disapear')
-//   $('.all').removeClass('show')
-// }
+} else {
+  $('.index').removeClass('disapear')
+  $('.all').removeClass('show')
+}
 

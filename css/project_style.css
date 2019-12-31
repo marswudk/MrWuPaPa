@@ -9,6 +9,12 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 1080px) {
+  body {
+    overflow: scroll;
+  }
+}
+
 .index {
   width: 100vw;
   height: 100vh;
@@ -1235,10 +1241,11 @@ body {
 
 @media (max-width: 1080px) {
   .all {
-    height: initial;
+    height: auto;
+    overflow: scroll;
   }
   .all .page {
-    position: initial;
+    position: relative;
     z-index: 1;
     height: -webkit-fit-content;
     height: -moz-fit-content;
