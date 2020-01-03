@@ -77,7 +77,7 @@ $(document).ready(function () {
 var width = $(window).width();
 console.log(width);
 
-if (width > 1080) {
+if (width > 768) {
   var number_li = $('.nav_list li').length;
   n = 1;
   console.log(width);
