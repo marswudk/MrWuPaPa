@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <!-- animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/project_style.css">
+    
 
 </head>
 
@@ -24,7 +27,8 @@
         </a>
     </div>
     <div class="all" id="all">
-        <div class="nav">
+        <div data-aos="zoom-in-right" 
+            class="nav">
             <div class="logo back_to_index">
                 <a href="#index">
                     <img src="./img/logo.png" alt="">
@@ -249,12 +253,12 @@
                     </div>
                     <div class="item col-md-3 col-5">
                         <div class="item-content">
-                            <img src="./img/IMG_3038.JPG" alt="">
+                            <img src="./img/FireShot Capture 006 - 庭園溫室栽培 - Home - www.facebook.com.png" alt="">
                         </div>
                     </div>
                     <div class="item col-md-3 col-5">
                         <div class="item-content">
-                            <img src="./img/FireShot Capture 006 - 庭園溫室栽培 - Home - www.facebook.com.png" alt="">
+                            <img src="./img/IMG_3038.JPG" alt="">
                         </div>
                     </div>
                 </div>
@@ -273,7 +277,7 @@
                     <p>0987654321</p>
                 </li>
                 <li class="address col-md-5">
-                    <img src="./img/location.png" alt="">
+                    <img class="animated infinite bounce" src="./img/location.png" alt="">
                     <p>雲林縣莿桐鄉埔子村3-33號</p>
                 </li>
 
@@ -303,100 +307,102 @@
         </div>
     </div>
 
-        <div id="melon_modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                <div class="modal-content">
+    <div id="melon_modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title">美濃瓜</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body d-flex">
+                <div class="modal-header">
+                    <h5 class="modal-title">美濃瓜</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex">
 
-                        <img class="img-fluid" src="./img/IMG_4875.JPG" alt="">
-                        <p>成熟瓜果表皮呈銀白略帶黃白色，果肉為淡白綠色，靠近便能聞到高貴而淡雅的香氣，口感香甜！每棵瓜藤只留1~2個果實(一般留7-10果實)，重質不重量的栽培方式，就是我們的品質保證！<br />
-                            <br />※每箱淨重10台斤(六公斤)，約含12顆美濃瓜
-                        </p>
-                    </div>
-                    <div class="modal-footer d-flex">
-                        <input type="number" min="1" placeholder="1">箱
-                        <button type="button" class="btn btn-primary">加入購物車</button>
-                    </div>
+                    <img class="img-fluid" src="./img/IMG_4875.JPG" alt="">
+                    <p>成熟瓜果表皮呈銀白略帶黃白色，果肉為淡白綠色，靠近便能聞到高貴而淡雅的香氣，口感香甜！每棵瓜藤只留1~2個果實(一般留7-10果實)，重質不重量的栽培方式，就是我們的品質保證！<br />
+                        <br />※每箱淨重10台斤(六公斤)，約含12顆美濃瓜
+                    </p>
+                </div>
+                <div class="modal-footer d-flex">
+                    <input type="number" min="1" placeholder="1">箱
+                    <button type="button" class="btn btn-primary">加入購物車</button>
                 </div>
             </div>
         </div>
-        <div id="tomato_modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">小番茄</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body d-flex">
-                        <img class="img-fluid" src="./img/IMG_5345.JPG" alt="">
-                        <p>果實呈現橢圓形、顏色為正紅色。皮薄汁多、甜度高。採收期11月-4月，每顆番茄都等到完全熟透後才摘下，再透過人工篩選包裝，只把最好的品質送到大家的手中。<br /><br />
-                            ※每箱淨重10台斤(10盒)。
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="number" min="1" placeholder="1">箱
-                        <button type="button" class="btn btn-primary">加入購物車</button>
-                    </div>
+    </div>
+    <div id="tomato_modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">小番茄</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex">
+                    <img class="img-fluid" src="./img/IMG_5345.JPG" alt="">
+                    <p>果實呈現橢圓形、顏色為正紅色。皮薄汁多、甜度高。採收期11月-4月，每顆番茄都等到完全熟透後才摘下，再透過人工篩選包裝，只把最好的品質送到大家的手中。<br /><br />
+                        ※每箱淨重10台斤(10盒)。
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <input type="number" min="1" placeholder="1">箱
+                    <button type="button" class="btn btn-primary">加入購物車</button>
                 </div>
             </div>
         </div>
-        <div id="green_pepper_modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered modal-xl " role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">青椒</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body d-flex">
-                        <img class="img-fluid" src="./img/IMG_9077.JPG" alt="">
-                        <p>有別於一般戶外種植的青椒，透過溫室栽培的青椒少了外殼厚重的口感，更多了清甜的好滋味，希望讓不愛吃青椒的小孩，都能愛上青椒。<br /><br />
-                            ※每箱淨重5台斤(3公斤)。
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="number" min="1" placeholder="1">箱
-                        <button type="button" class="btn btn-primary">加入購物車</button>
-                    </div>
+    </div>
+    <div id="green_pepper_modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-xl " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">青椒</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex">
+                    <img class="img-fluid" src="./img/IMG_9077.JPG" alt="">
+                    <p>有別於一般戶外種植的青椒，透過溫室栽培的青椒少了外殼厚重的口感，更多了清甜的好滋味，希望讓不愛吃青椒的小孩，都能愛上青椒。<br /><br />
+                        ※每箱淨重5台斤(3公斤)。
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <input type="number" min="1" placeholder="1">箱
+                    <button type="button" class="btn btn-primary">加入購物車</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="backToTop"></div>
 
-        <!-- jquery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
-            integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
-        <!-- bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-        <!-- jquery mousewheel -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
-        <!-- swiper -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-        <!-- muuri -->
-        <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
-        <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <!-- jquery mousewheel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <!-- muuri -->
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-
-        <script src="./js/mrwupapa.js"></script>
+    <script src="./js/mrwupapa.js"></script>
 
 </body>
 

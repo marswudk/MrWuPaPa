@@ -4,6 +4,10 @@
 //   $('.modal_btn').trigger('focus')
 // });
 
+//AOS
+AOS.init();
+
+
 // muuri
 var grid = new Muuri('.grid', {
   dragEnabled: true,
@@ -75,12 +79,13 @@ $(document).ready(function () {
 // $(window).on('resize',function () {
 
 var width = $(window).width();
-console.log(width);
+var height = $(window).height();
+console.log(width, height);
 
-if (width > 768) {
+if (width > 769) {
   var number_li = $('.nav_list li').length;
   n = 1;
-  console.log(width);
+
 
   $('.page').on('mousewheel', function scroll(e) {
     // console.log(e.deltaY);
@@ -94,6 +99,9 @@ if (width > 768) {
 
         if (n == 4) {
           grid.refreshItems().layout()
+          $('.news .item').addClass('animated zoomIn')
+        } else {
+          $('.news .item').removeClass('animated zoomIn')
         }
 
       }
@@ -106,6 +114,9 @@ if (width > 768) {
 
         if (n == 4) {
           grid.refreshItems().layout()
+          $('.news .item').addClass('animated zoomIn')
+        } else {
+          $('.news .item').removeClass('animated zoomIn')
         }
 
       }
@@ -136,6 +147,9 @@ if (width > 768) {
 
       if (n == 4) {
         grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
       }
 
       console.log("click跳頁:", n);
@@ -152,13 +166,16 @@ if (width > 768) {
 
       if (n == 4) {
         grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
       }
       console.log("click不跳頁:", index);
     }
 
   })
 } else {
-  
+
 }
 // })
 
@@ -179,4 +196,33 @@ if (window.location.hash) {
   $('.index').removeClass('disapear')
   $('.all').removeClass('show')
 }
+
+//回到最上&購物車
+
+$(window).scroll(function (event) {
+  var scroll = $(window).scrollTop();
+  // console.log(scroll);
+  if(width <=768){
+    // console.log(width);
+    if(scroll > 100){
+      $('.shopping_cart').addClass('fixed_cart');
+      $('.backToTop').addClass('bump');
+      
+    }else{
+      $('.shopping_cart').removeClass('fixed_cart');
+      $('.backToTop').removeClass('bump');
+    }
+    
+  }
+});
+$('.backToTop').click(function(){ 
+  
+  document.documentElement.scrollTop = 0;
+})
+
+
+
+
+
+
 

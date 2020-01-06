@@ -18,7 +18,7 @@ body {
 .index {
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/IMG_5476.JPG");
+  background-image: url("../img/index.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body {
 .index a {
   position: relative;
   top: -1000px;
-  left: calc(50% - 144px);
+  left: calc(50% - 160px);
   -webkit-animation: show;
           animation: show;
   -webkit-animation-duration: 3s;
@@ -69,37 +69,29 @@ body {
 }
 
 .index a img:hover {
-  -webkit-animation: shine 2s linear infinite;
-          animation: shine 2s linear infinite;
+  -webkit-animation: shine 0.2s linear infinite alternate;
+          animation: shine 0.2s linear infinite alternate;
 }
 
 @-webkit-keyframes shine {
   0% {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(180deg) scale(1.2);
-            transform: rotate(180deg) scale(1.2);
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
   }
   100% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
 }
 
 @keyframes shine {
   0% {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
-  }
-  50% {
-    -webkit-transform: rotate(180deg) scale(1.2);
-            transform: rotate(180deg) scale(1.2);
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
   }
   100% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
   }
 }
 
@@ -489,11 +481,10 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 100%;
-  text-align: center;
 }
 
 .all .about .row span {
@@ -505,6 +496,10 @@ body {
   color: black;
   font-family: "Bebas Neue", cursive;
   line-height: 1.5;
+}
+
+.all .about .row span h1:first-child {
+  margin-top: 40px;
 }
 
 .all .about .row span p {
@@ -609,9 +604,9 @@ body {
 
 @media (max-width: 1080px) {
   .all .about .row {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .all .about .row .content {
     max-width: 38%;
@@ -756,14 +751,17 @@ body {
             align-items: flex-start;
   }
   .all .corner .row .content {
-    margin-top: 68px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 0px;
   }
   .all .corner .row .content h1 {
     font-size: 48px;
   }
   .all .corner .row .content p {
     font-size: 30px;
+  }
+  .all .corner .row .imgs {
+    margin-bottom: 50px;
   }
   .all .corner .row .imgs img {
     max-height: 200px;
@@ -842,7 +840,7 @@ body {
 }
 
 .all .product .row {
-  width: 80%;
+  width: 75%;
   height: 100%;
   margin: 0 auto;
   -webkit-box-pack: end;
@@ -909,6 +907,12 @@ body {
   }
 }
 
+@media (max-width: 1366px) {
+  .all .product {
+    padding-bottom: 60px;
+  }
+}
+
 @media (max-width: 1280px) {
   .all .product .row {
     -webkit-box-align: start;
@@ -924,8 +928,11 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .all .product .row .card:nth-child(2) {
+  .all .product .row .card:nth-child(3) {
     margin-right: 0;
   }
   .all .product .row .card .card-body h5 {
@@ -957,7 +964,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 50px 50px 100px;
+  padding: 0px 30px 100px;
 }
 
 .all .news .inner .grid {
@@ -968,8 +975,12 @@ body {
 .all .news .inner .grid .item {
   display: block;
   position: absolute;
-  margin: 20px;
+  margin: 15px;
   z-index: 1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .all .news .inner .grid .item img {
@@ -1009,17 +1020,17 @@ body {
 @media (max-width: 1080px) {
   .all .news .inner .grid {
     margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 170px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .all .news .inner {
     padding: 25px 50px;
   }
   .all .news .inner .grid {
-    margin-left: 0px;
-    margin-top: 100px;
+    margin-left: 30px;
+    margin-top: 0px;
   }
 }
 
@@ -1055,6 +1066,14 @@ body {
   .all .shopping_cart {
     top: 10px;
     right: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all .fixed_cart {
+    position: fixed;
+    right: 10px;
+    top: 700px;
   }
 }
 
@@ -1127,6 +1146,12 @@ body {
   width: 25px;
   height: 29px;
   margin-right: 25px;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .all .footer ul .address p {
@@ -1204,6 +1229,15 @@ body {
   }
 }
 
+@media (max-width: 1366px) {
+  .all .footer {
+    padding: 5px 10px;
+  }
+  .all .footer ul li {
+    padding: 10px;
+  }
+}
+
 @media (max-width: 1280px) {
   .all .footer ul li {
     padding: 10px;
@@ -1252,6 +1286,100 @@ body {
     display: flex;
     position: relative;
   }
+  .all .footer ul .phone {
+    max-width: 18%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 18%;
+            flex: 0 0 18%;
+  }
+  .all .footer ul .phone p {
+    font-size: 24px;
+  }
+  .all .footer ul .address {
+    max-width: 42%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 42%;
+            flex: 0 0 42%;
+  }
+  .all .footer ul .address p {
+    font-size: 20px;
+  }
+  .all .footer ul .social_media {
+    max-width: 25%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+  .all .footer ul .social_media ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .all .footer ul .social_media img {
+    width: 40px;
+  }
+  .all .footer ul .copyright {
+    max-width: 15%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 15%;
+            flex: 0 0 15%;
+  }
+  .all .footer ul .copyright p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .all .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .all .footer ul .phone {
+    max-width: 18%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 18%;
+            flex: 0 0 18%;
+  }
+  .all .footer ul .phone p {
+    font-size: 24px;
+  }
+  .all .footer ul .address {
+    max-width: 42%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 42%;
+            flex: 0 0 42%;
+  }
+  .all .footer ul .address p {
+    font-size: 20px;
+  }
+  .all .footer ul .social_media {
+    max-width: 25%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+  .all .footer ul .social_media ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .all .footer ul .social_media img {
+    width: 40px;
+  }
+  .all .footer ul .copyright {
+    max-width: 15%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 15%;
+            flex: 0 0 15%;
+  }
+  .all .footer ul .copyright p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1267,7 +1395,8 @@ body {
     height: fit-content;
   }
   .all .remove {
-    display: none;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .all .product {
     padding: 50px;
@@ -1291,5 +1420,21 @@ body {
 .show {
   opacity: 1;
   pointer-events: all;
+}
+
+.backToTop {
+  display: none;
+  background: url("../img/back_to_top.jpg") center/cover no-repeat;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 150px;
+  right: 10px;
+  z-index: 99;
+}
+
+.backToTop.bump {
+  display: block;
 }
 /*# sourceMappingURL=project_style.css.map */
