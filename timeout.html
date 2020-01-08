@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .loadingbg {
+        background-color: pink;
+        width: 100vw;
+        height: 100vh;
+        opacity: 1;
+        pointer-events: all;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ;
+    }
+
+    .loadingbg.miss {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loadingBar {
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+    }
+
+    .loading {
+        background-color: olive;
+        width: 0%;
+        height: 100%;
+    }
+</style>
+
+<body>
+
+    <div class="loadingbg">
+        <div class="loadingBar">
+            <div class="loading">
+
+            </div>
+        </div>
+        <h2>100%</h2>
+    </div>
+    <script>
+        var time = 0;
+        // function countdown() {
+        //     console.log(time , "sec"); 
+        //     time--;           
+        //     if(time >= 0){
+        //         setTimeout(countdown,1000);
+        //     }  
+        // };
+        // countdown();
+        
+        function countdown() {
+            time++;
+            $('.loading').css('width',time +"%")
+            $('h2').text(time + "%")
+            if (time === 100) {
+                clearInterval(timer);
+                $('.loadingbg').addClass('miss')
+                setTimeout(function(){
+                    $(".loadingbg").css("display","none")
+                }, 1000);
+            }
+        }
+        var timer = setInterval(countdown, 20);
+
+
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+</body>
+
+</html>

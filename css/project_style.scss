@@ -1166,7 +1166,7 @@ body {
             position: fixed;
             // bottom: 60px;
             right: 10px;
-            top: 700px;
+            top: 750px;
         }
     }
 
@@ -1474,6 +1474,12 @@ body {
             }
         }
     }
+    @media(max-width:576px){
+        .footer{
+            flex-direction: column;   
+            align-items: flex-start;
+        }
+    }
     @media(max-width: 375px) {
         .footer {
             flex-direction: column;   
@@ -1574,9 +1580,12 @@ body {
     height: 65px;
     border-radius: 50%;
     position: fixed;
-    bottom: 150px;
+    bottom: 120px;
     right: 10px;
     z-index: 99;
+    @media (max-width:576px){
+        bottom: 150px;
+    }
 
 }
 

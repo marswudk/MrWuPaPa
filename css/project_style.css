@@ -1073,7 +1073,7 @@ body {
   .all .fixed_cart {
     position: fixed;
     right: 10px;
-    top: 700px;
+    top: 750px;
   }
 }
 
@@ -1329,6 +1329,18 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .all .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 @media (max-width: 375px) {
   .all .footer {
     -webkit-box-orient: vertical;
@@ -1429,9 +1441,15 @@ body {
   height: 65px;
   border-radius: 50%;
   position: fixed;
-  bottom: 150px;
+  bottom: 120px;
   right: 10px;
   z-index: 99;
+}
+
+@media (max-width: 576px) {
+  .backToTop {
+    bottom: 150px;
+  }
 }
 
 .backToTop.bump {
