@@ -1080,7 +1080,7 @@ body {
 .all .footer {
   width: 100%;
   /* height:; */
-  background-color: #c2bcbc;
+  background-color: cadetblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
