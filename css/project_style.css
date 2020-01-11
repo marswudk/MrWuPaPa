@@ -380,6 +380,29 @@ body {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+@media (max-width: 576px) {
+  .all .nav .mobile_nav ul li:first-child {
+    margin-top: 80px;
+  }
+  .all .nav .mobile_nav ul li a {
+    font-size: 38px;
+    padding: 12px;
+  }
+  .all .nav .mobile_nav ul .phone {
+    font-size: 28px;
+  }
+  .all .nav .mobile_nav ul .address {
+    font-size: 28px;
+  }
+  .all .nav .mobile_nav ul .social_media ul li a img {
+    width: 50px;
+    margin: 0;
+  }
+  .all .nav .mobile_nav ul .copyright {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 414px) {
   .all .nav .mobile_nav ul li:first-child {
     margin-top: 80px;
@@ -511,6 +534,10 @@ body {
   -webkit-transition: 2s;
   transition: 2s;
   background-color: #D5E7E6;
+}
+
+.all .page.hide {
+  opacity: 0;
 }
 
 .all .remove {
@@ -969,6 +996,7 @@ body {
 .all .product .row .card {
   border: none;
   margin-right: 40px;
+  padding: 0;
 }
 
 .all .product .row .card img {
@@ -1605,7 +1633,7 @@ body {
 @media (max-width: 768px) {
   .all {
     height: auto;
-    overflow: scroll;
+    overflow: hidden;
   }
   .all .page {
     position: relative;
@@ -1635,6 +1663,30 @@ body {
 
 .modal .modal-content .modal-body img {
   width: 300px;
+}
+
+@media (max-width: 576px) {
+  .modal .modal-content .modal-header h5 {
+    font-size: 40px;
+    font-family: "Bebas Neue", cursive;
+  }
+  .modal .modal-content .modal-header p {
+    font-size: 32px;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .modal .modal-content .modal-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modal .modal-content .modal-body img {
+    width: 300px;
+    margin-bottom: 15px;
+  }
 }
 
 .show {

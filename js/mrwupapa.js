@@ -1,6 +1,10 @@
 
 //AOS
 AOS.init();
+AOS.init({
+  once: true, // whether animation should happen only once - while scrolling down
+  
+});
 
 
 // muuri
@@ -207,7 +211,8 @@ if (width > 769) {
 $('.nav_btn').click(function () {
   $('.bar').toggleClass('rotate')
   $('.mobile_nav').toggleClass('rotate')
-  $('.logo').toggleClass('disapear')  
+  $('.logo').toggleClass('disapear')
+  $('.page').toggleClass('hide')    
   console.log($('.mobile_nav'));
 })
 
@@ -217,8 +222,7 @@ $('.mobile_nav li').click(function(){
     $('.bar').removeClass('rotate')
     $('.mobile_nav').removeClass('rotate')
     $('.logo').removeClass('disapear')
-    
-    
+    $('.page').removeClass('hide') 
   }
 
 })

@@ -275,8 +275,7 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-
-
+            // overflow: hidden;
             ul {
                 width: 100%;
                 margin: 0;
@@ -339,6 +338,43 @@ body {
                 .copyright {
                     font-size: $font_size_text;
                     font-family: $font_family_text;
+                }
+            }
+            @media (max-width: 576px){
+                ul{
+                    li{
+                        &:first-child {
+                            margin-top: 80px;
+                        }
+                        a{
+                            font-size: 38px;
+                            padding: 12px;
+                        }
+                    }
+                    .phone {
+                        font-size: 28px;    
+                    }
+    
+                    .address {
+                        font-size: 28px;
+                    }
+                    .social_media {
+                        ul {    
+                            li { 
+                                a {
+                                    img {
+                                        width: 50px;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    .copyright {
+                        font-size: 28px;
+                    }
+
                 }
             }
             @media (max-width: 414px){
@@ -421,6 +457,7 @@ body {
         .mobile_nav.rotate {
             opacity: 1;
             pointer-events: all;
+            
         }
 
         .nav_list li.active {
@@ -535,6 +572,9 @@ body {
         transition: 2s;
         background-color: #D5E7E6;
         // display: none;
+    }
+    .page.hide{ //待解>顯示mobile_nav，畫面希望可以滿版
+        opacity: 0;
     }
 
     .remove {
@@ -1088,6 +1128,7 @@ body {
                 border: none;
                 // height: 70%;
                 margin-right: 40px;
+                padding: 0;
 
                 img {
                     // height: 450px;
@@ -1817,11 +1858,15 @@ body {
 
 
 }
-
+// @media( max-width: 768px){
+//     .index{
+//         overflow: hidden;
+//     }
+// }
 @media (max-width: 768px) {
     .all {
         height: auto;
-        overflow: scroll;
+        overflow: hidden;
 
         .page {
             position: relative;
@@ -1854,9 +1899,33 @@ body {
             }
         }
 
-        .modal-body {
+        .modal-body {            
             img {
                 width: 300px;
+            }
+        }
+    }
+    @media (max-width: 576px){
+        .modal-content{
+            .modal-header {
+                h5 {
+                    font-size: $font_size_card_title;
+                    font-family: $font_family_title;
+                }
+    
+                p {
+                    font-size: $font_size_text;
+                    font-family: $font_family_text;
+                }
+            }
+    
+            .modal-body {
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 300px;
+                    margin-bottom: 15px;
+                }
             }
         }
     }
