@@ -28,27 +28,58 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
-var corner_swiper = new Swiper('.corner_swiper', {
-  observer: true,
-  observeParents: true,
-  slidesPerView: 3,
-  spaceBetween: 30,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  grabCursor: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    clickable: true,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-  },
-});
+var width = $(window).width();
+if(width > 576){
+  var corner_swiper = new Swiper('.corner_swiper', {  
+  
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    grabCursor: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      clickable: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+   
+  });
+}else{
+  console.log(width);
+  var corner_swiper = new Swiper('.corner_swiper', {  
+  
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    grabCursor: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      clickable: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+   
+  });
+}
+
 
 
 // 進版畫面跳關於庭園
@@ -112,6 +143,7 @@ if (width > 769) {
         }
 
       }
+      
     }
     // setTimeout(scroll , 1500)
 
@@ -166,14 +198,16 @@ if (width > 769) {
     }
 
   })
-} 
+} else{
+  grid.refreshItems().layout()
+}
 // })
 
 // mobile nav
 $('.nav_btn').click(function () {
   $('.bar').toggleClass('rotate')
   $('.mobile_nav').toggleClass('rotate')
-  $('.logo').toggleClass('disapear')
+  $('.logo').toggleClass('disapear')  
   console.log($('.mobile_nav'));
 })
 
@@ -183,6 +217,8 @@ $('.mobile_nav li').click(function(){
     $('.bar').removeClass('rotate')
     $('.mobile_nav').removeClass('rotate')
     $('.logo').removeClass('disapear')
+    
+    
   }
 
 })
@@ -205,12 +241,12 @@ $(window).scroll(function (event) {
   if (width <= 768) {
     // console.log(width);
     if (scroll > 100) {
-      $('.shopping_cart').addClass('fixed_cart');
+      $('.shopping_cart').addClass('fixed_cart');      
       $('.backToTop').addClass('bump');
 
     } else {
       $('.shopping_cart').removeClass('fixed_cart');
-      $('.backToTop').removeClass('bump');
+      $('.backToTop').removeClass('bump');     
     }
 
   }
