@@ -21,6 +21,7 @@ var swiper = new Swiper('.swiper-container', {
   spaceBetween: 30,
   loop: true,
   centeredSlides: true,
+  centeredSlidesBounds: true,
   grabCursor: true,
   navigation: {
     nextEl: '.swiper-button-next',

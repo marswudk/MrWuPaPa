@@ -18,7 +18,7 @@ body {
 .index {
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/index.jpg');
+    background-image: url('../img/00index/index.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -625,7 +625,7 @@ body {
                 .swiper-container {
                     max-width: 80%;
                     max-height: 70%;
-
+                    text-align: center;
                     img {
                         height: 700px;
                         width: 100%;
@@ -907,7 +907,7 @@ body {
                 margin-left: 420px;
 
                 .corner_swiper {
-                    height: 60%;
+                    height: 70%;
 
                     .swiper-slide {
                         img {
@@ -1221,6 +1221,9 @@ body {
                     &:nth-child(3) {
                         margin-right: 0;
                     }
+                    img{
+                        max-height: 320px;
+                    }
 
                     .card-body {
                         h5 {
@@ -1231,6 +1234,7 @@ body {
                         p {
                             font-size: 20px;
                         }
+                        
                     }
                 }
             }
@@ -1259,6 +1263,9 @@ body {
                 .card {
                     margin-top: 30px;
                     margin-right: 0;
+                    img{
+                        max-height: unset;
+                    }
                 }
             }
         }
@@ -1396,7 +1403,7 @@ body {
         right: 10px;
         top: 750px;
         @media (max-width: 576px) {
-            top: 650px;
+            top: 560px;
             z-index: 11;
         }
         @media (max-width: 414px) {
@@ -1889,17 +1896,16 @@ body {
     .modal-content {
         .modal-header {
             h5 {
-                font-size: $font_size_card_title;
+                font-size: $font_size_title;
                 font-family: $font_family_title;
-            }
-
-            p {
-                font-size: $font_size_text;
-                font-family: $font_family_text;
             }
         }
 
-        .modal-body {            
+        .modal-body { 
+            p {
+                font-size: $font_size_text;
+                font-family: $font_family_text;
+            }           
             img {
                 width: 300px;
             }
@@ -1910,21 +1916,34 @@ body {
             .modal-header {
                 h5 {
                     font-size: $font_size_card_title;
-                    font-family: $font_family_title;
-                }
-    
-                p {
-                    font-size: $font_size_text;
-                    font-family: $font_family_text;
                 }
             }
     
             .modal-body {
                 flex-direction: column;
                 align-items: center;
+                p {
+                    font-size: $font_size_card_text;
+                }
                 img {
                     width: 300px;
                     margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    @media (max-width: 414px){
+        .modal-content{
+            .modal-header {
+                h5 {
+                    font-size: 34px;
+                }
+            }
+    
+            .modal-body {
+                
+                p {
+                    font-size: 22px;
                 }
             }
         }
@@ -1939,7 +1958,7 @@ body {
 
 .backToTop {
     display: none;
-    background: url('../img/back_to_top.jpg') center / cover no-repeat;
+    background: url('../img/05icon/back_to_top.jpg') center / cover no-repeat;
     width: 65px;
     height: 65px;
     border-radius: 50%;
