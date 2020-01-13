@@ -123,6 +123,47 @@ $(window).on('resize', function () {
   }
   // console.log(scroll_effect)
 })
+$('.page').on('scrollStart', function touch(e) {
+  if ($(this).hasClass('now')) {    //若此頁有'now'才執行下列程式->可避免一次滾多頁    
+    if (e.deltaY == -1) {
+      if (n < number_li) {
+        n++
+        $(`.page:nth-child(${n})`).addClass('remove')
+        $('.page').removeClass('now')
+        $(`.page:nth-child(${n + 1})`).addClass('now')
+        $('.nav_list li').removeClass('active')
+        $(`.nav_list li:nth-child(${n})`).addClass('active')
+        if (n == 4) {
+          grid.refreshItems().layout()
+          $('.news .item').addClass('animated zoomIn')
+        } else {
+          $('.news .item').removeClass('animated zoomIn')
+        }        
+      }
+
+      $('.page').removeClass('now')
+      $(`.page:nth-child(${n + 1})`).addClass('now')
+    } else {
+      if (n > 1) {
+        n--
+        $(`.page:nth-child(${n + 1})`).removeClass('remove')
+        $('.page').removeClass('now')
+        $(`.page:nth-child(${n})`).addClass('now')
+        $('.nav_list li').removeClass('active')
+        $(`.nav_list li:nth-child(${n})`).addClass('active')
+
+        if (n == 4) {
+          grid.refreshItems().layout()
+          $('.news .item').addClass('animated zoomIn')
+        } else {
+          $('.news .item').removeClass('animated zoomIn')
+        }
+      }
+      $('.page').removeClass('now')
+      $(`.page:nth-child(${n + 1})`).addClass('now')
+    }
+  }
+})
 
 
 
@@ -135,7 +176,7 @@ if (scroll_effect == true) {
 
   $('.page').on('mousewheel', function scroll(e) {
 
-    if ($(this).hasClass('now')) {    //若此頁有'now'才執行下列程式       
+    if ($(this).hasClass('now')) {    //若此頁有'now'才執行下列程式->可避免一次滾多頁    
       if (e.deltaY == -1) {
         if (n < number_li) {
           n++
@@ -150,7 +191,7 @@ if (scroll_effect == true) {
           } else {
             $('.news .item').removeClass('animated zoomIn')
           }
-          setTimeout(scroll, 1500)
+          
         }
 
         $('.page').removeClass('now')
