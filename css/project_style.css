@@ -142,7 +142,7 @@ body {
 
 .all {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 116px);
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -152,6 +152,24 @@ body {
   pointer-events: none;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+}
+
+@media (max-width: 1520px) {
+  .all {
+    height: calc(100vh - 110px);
+  }
+}
+
+@media (max-width: 1366px) {
+  .all {
+    height: calc(100vh - 90px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .all {
+    height: 100vh;
+  }
 }
 
 .all .nav {
@@ -553,9 +571,9 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
 }
 
@@ -568,10 +586,8 @@ body {
   color: black;
   font-family: "Bebas Neue", cursive;
   line-height: 1.5;
-}
-
-.all .about .row span h1:first-child {
-  margin-top: 40px;
+  margin-bottom: 0;
+  margin-top: 5px;
 }
 
 .all .about .row span p {
@@ -580,6 +596,7 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   line-height: 1.5;
   letter-spacing: 5px;
+  margin: 0;
 }
 
 .all .about .row .photos {
@@ -594,6 +611,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 30px;
 }
 
 .all .about .row .photos .swiper-container {
@@ -622,10 +640,10 @@ body {
 
 @media (max-width: 1610px) {
   .all .about .row span h1 {
-    font-size: 42px;
+    font-size: 40px;
   }
   .all .about .row span p {
-    font-size: 26px;
+    font-size: 24px;
   }
   .all .about .row .photos .swiper-container img {
     height: 500px;

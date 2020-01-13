@@ -3,14 +3,14 @@
 AOS.init();
 AOS.init({
   once: true, // whether animation should happen only once - while scrolling down
-  
+
 });
 
 
 // muuri
 var grid = new Muuri('.grid', {
   dragEnabled: true,
-  
+
 });
 
 // swiper
@@ -34,9 +34,9 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 var width = $(window).width();
-if(width > 576){
-  var corner_swiper = new Swiper('.corner_swiper', {  
-  
+if (width > 576) {
+  var corner_swiper = new Swiper('.corner_swiper', {
+
     observer: true,
     observeParents: true,
     slidesPerView: 3,
@@ -56,12 +56,12 @@ if(width > 576){
     pagination: {
       el: '.swiper-pagination',
     },
-   
+
   });
-}else{
-  console.log(width);
-  var corner_swiper = new Swiper('.corner_swiper', {  
-  
+} else {
+  // console.log(width);
+  var corner_swiper = new Swiper('.corner_swiper', {
+
     observer: true,
     observeParents: true,
     slidesPerView: 1,
@@ -81,7 +81,7 @@ if(width > 576){
     pagination: {
       el: '.swiper-pagination',
     },
-   
+
   });
 }
 
@@ -106,53 +106,80 @@ $(document).ready(function () {
 // 換頁效果
 // console.log($(window).width());
 
-// $(window).on('resize',function () {
+
 
 var width = $(window).width();
 var height = $(window).height();
-console.log(width, height);
+var scroll_effect = true;
+// console.log(width, height);
 
-if (width > 769) {
+$(window).on('resize', function () {
+  var width = $(window).width();
+  var height = $(window).height();
+  if (width >= 769) {
+    scroll_effect = true;
+  } else {
+    scroll_effect = false;
+  }
+  // console.log(scroll_effect)
+})
+
+
+
+
+if (scroll_effect == true) {
   var number_li = $('.nav_list li').length;
   n = 1;
-  $('.page').on('mousewheel', function scroll(e) {
-    // console.log(e.deltaY);
-    if (e.deltaY == -1) {
-      if (n < number_li) {
-        n++
 
-        $(`.page:nth-child(${n})`).addClass('remove')
-        $('.nav_list li').removeClass('active')
-        $(`.nav_list li:nth-child(${n})`).addClass('active')
+    // 抓到滾動一次就settimeOut
 
-        if (n == 4) {
-          grid.refreshItems().layout()
-          $('.news .item').addClass('animated zoomIn')
-        } else {
-          $('.news .item').removeClass('animated zoomIn')
+    $('.page').on('mousewheel', function scroll(e) {
+      // setTimeout(function () {
+        if($(this).hasClass('now')){          
+          if (e.deltaY == -1) {
+            if (n < number_li) {
+              n++            
+              $(`.page:nth-child(${n})`).addClass('remove')
+              $('.page').removeClass('now')
+              $(`.page:nth-child(${n+1})`).addClass('now')
+              $('.nav_list li').removeClass('active')
+              $(`.nav_list li:nth-child(${n})`).addClass('active') 
+              if (n == 4) {
+                grid.refreshItems().layout()
+                $('.news .item').addClass('animated zoomIn')
+              } else {
+                $('.news .item').removeClass('animated zoomIn')
+              }
+              setTimeout(scroll,1500)
+            }
+  
+            $('.page').removeClass('now')
+            $(`.page:nth-child(${n+1})`).addClass('now')
+          } else {
+            if (n > 1) {
+              n--
+              $(`.page:nth-child(${n + 1})`).removeClass('remove')
+              $('.page').removeClass('now')
+              $(`.page:nth-child(${n})`).addClass('now')
+              $('.nav_list li').removeClass('active')
+              $(`.nav_list li:nth-child(${n})`).addClass('active')
+  
+              if (n == 4) {
+                grid.refreshItems().layout()
+                $('.news .item').addClass('animated zoomIn')
+              } else {
+                $('.news .item').removeClass('animated zoomIn')
+              }
+            }
+            $('.page').removeClass('now')
+            $(`.page:nth-child(${n+1})`).addClass('now')
+          }
         }
-
-      }
-    } else {
-      if (n > 1) {
-        n--
-        $(`.page:nth-child(${n + 1})`).removeClass('remove')
-        $('.nav_list li').removeClass('active')
-        $(`.nav_list li:nth-child(${n})`).addClass('active')
-
-        if (n == 4) {
-          grid.refreshItems().layout()
-          $('.news .item').addClass('animated zoomIn')
-        } else {
-          $('.news .item').removeClass('animated zoomIn')
-        }
-
-      }
-      
+      // },500);
     }
-    // setTimeout(scroll , 1500)
+    );
 
-  })
+
 
 
   $('.nav_list li').click(function () {
@@ -203,27 +230,30 @@ if (width > 769) {
     }
 
   })
-} else{
+} else if (scroll_effect == false) {
   grid.refreshItems().layout()
 }
-// })
+
+
+
+
 
 // mobile nav
 $('.nav_btn').click(function () {
   $('.bar').toggleClass('rotate')
   $('.mobile_nav').toggleClass('rotate')
   $('.logo').toggleClass('disapear')
-  $('.page').toggleClass('hide')    
-  console.log($('.mobile_nav'));
+  $('.page').toggleClass('hide')
+  // console.log($('.mobile_nav'));
 })
 
 // mobile nav 點擊連結後remove disapear
-$('.mobile_nav li').click(function(){
-  if($(".bar").hasClass('rotate')){
+$('.mobile_nav li').click(function () {
+  if ($(".bar").hasClass('rotate')) {
     $('.bar').removeClass('rotate')
     $('.mobile_nav').removeClass('rotate')
     $('.logo').removeClass('disapear')
-    $('.page').removeClass('hide') 
+    $('.page').removeClass('hide')
   }
 
 })
@@ -246,12 +276,12 @@ $(window).scroll(function (event) {
   if (width <= 768) {
     // console.log(width);
     if (scroll > 100) {
-      $('.shopping_cart').addClass('fixed_cart');      
+      $('.shopping_cart').addClass('fixed_cart');
       $('.backToTop').addClass('bump');
 
     } else {
       $('.shopping_cart').removeClass('fixed_cart');
-      $('.backToTop').removeClass('bump');     
+      $('.backToTop').removeClass('bump');
     }
 
   }
