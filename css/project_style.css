@@ -1246,7 +1246,7 @@ body {
 
 @media (max-width: 375px) {
   .all .shopping_cart {
-    top: 500px;
+    top: 480px;
   }
 }
 
@@ -1272,7 +1272,7 @@ body {
 
 @media (max-width: 375px) {
   .all .fixed_cart {
-    top: 530px;
+    top: 520px;
     z-index: 11;
   }
 }
