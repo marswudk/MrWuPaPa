@@ -123,51 +123,8 @@ $(window).on('resize', function () {
   }
   // console.log(scroll_effect)
 })
-$('.page').on('scrollStart', function touch(e) {
-  if ($(this).hasClass('now')) {    //若此頁有'now'才執行下列程式->可避免一次滾多頁    
-    if (e.deltaY == -1) {
-      if (n < number_li) {
-        n++
-        $(`.page:nth-child(${n})`).addClass('remove')
-        $('.page').removeClass('now')
-        $(`.page:nth-child(${n + 1})`).addClass('now')
-        $('.nav_list li').removeClass('active')
-        $(`.nav_list li:nth-child(${n})`).addClass('active')
-        if (n == 4) {
-          grid.refreshItems().layout()
-          $('.news .item').addClass('animated zoomIn')
-        } else {
-          $('.news .item').removeClass('animated zoomIn')
-        }        
-      }
 
-      $('.page').removeClass('now')
-      $(`.page:nth-child(${n + 1})`).addClass('now')
-    } else {
-      if (n > 1) {
-        n--
-        $(`.page:nth-child(${n + 1})`).removeClass('remove')
-        $('.page').removeClass('now')
-        $(`.page:nth-child(${n})`).addClass('now')
-        $('.nav_list li').removeClass('active')
-        $(`.nav_list li:nth-child(${n})`).addClass('active')
-
-        if (n == 4) {
-          grid.refreshItems().layout()
-          $('.news .item').addClass('animated zoomIn')
-        } else {
-          $('.news .item').removeClass('animated zoomIn')
-        }
-      }
-      $('.page').removeClass('now')
-      $(`.page:nth-child(${n + 1})`).addClass('now')
-    }
-  }
-})
-
-
-
-
+//mousewheel
 if (scroll_effect == true) {
   var number_li = $('.nav_list li').length;
   n = 1;
@@ -191,11 +148,8 @@ if (scroll_effect == true) {
           } else {
             $('.news .item').removeClass('animated zoomIn')
           }
-          
         }
 
-        $('.page').removeClass('now')
-        $(`.page:nth-child(${n + 1})`).addClass('now')
       } else {
         if (n > 1) {
           n--
@@ -274,6 +228,54 @@ if (scroll_effect == true) {
 } else if (scroll_effect == false) {
   grid.refreshItems().layout()
 }
+
+
+
+//detect finger swipe
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) < Math.abs( yDiff ) ) {/*most significant*/
+                   
+        if ( yDiff > 0 ) {
+         scroll(e);
+        } else { 
+          scroll(e);
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+
+//mousedown
+
+
 
 
 
