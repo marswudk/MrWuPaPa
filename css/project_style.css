@@ -18,7 +18,7 @@ body {
 .index {
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/00index/index.jpg");
+  background-image: url("../img/00index/index(sm).jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
