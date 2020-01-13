@@ -131,53 +131,53 @@ if (scroll_effect == true) {
   var number_li = $('.nav_list li').length;
   n = 1;
 
-    // 抓到滾動一次就settimeOut
+  // 抓到滾動一次就settimeOut
 
-    $('.page').on('mousewheel', function scroll(e) {
-      // setTimeout(function () {
-        if($(this).hasClass('now')){          
-          if (e.deltaY == -1) {
-            if (n < number_li) {
-              n++            
-              $(`.page:nth-child(${n})`).addClass('remove')
-              $('.page').removeClass('now')
-              $(`.page:nth-child(${n+1})`).addClass('now')
-              $('.nav_list li').removeClass('active')
-              $(`.nav_list li:nth-child(${n})`).addClass('active') 
-              if (n == 4) {
-                grid.refreshItems().layout()
-                $('.news .item').addClass('animated zoomIn')
-              } else {
-                $('.news .item').removeClass('animated zoomIn')
-              }
-              setTimeout(scroll,1500)
-            }
-  
-            $('.page').removeClass('now')
-            $(`.page:nth-child(${n+1})`).addClass('now')
+  $('.page').on('mousewheel', function scroll(e) {
+
+    if ($(this).hasClass('now')) {    //若此頁有'now'才執行下列程式       
+      if (e.deltaY == -1) {
+        if (n < number_li) {
+          n++
+          $(`.page:nth-child(${n})`).addClass('remove')
+          $('.page').removeClass('now')
+          $(`.page:nth-child(${n + 1})`).addClass('now')
+          $('.nav_list li').removeClass('active')
+          $(`.nav_list li:nth-child(${n})`).addClass('active')
+          if (n == 4) {
+            grid.refreshItems().layout()
+            $('.news .item').addClass('animated zoomIn')
           } else {
-            if (n > 1) {
-              n--
-              $(`.page:nth-child(${n + 1})`).removeClass('remove')
-              $('.page').removeClass('now')
-              $(`.page:nth-child(${n})`).addClass('now')
-              $('.nav_list li').removeClass('active')
-              $(`.nav_list li:nth-child(${n})`).addClass('active')
-  
-              if (n == 4) {
-                grid.refreshItems().layout()
-                $('.news .item').addClass('animated zoomIn')
-              } else {
-                $('.news .item').removeClass('animated zoomIn')
-              }
-            }
-            $('.page').removeClass('now')
-            $(`.page:nth-child(${n+1})`).addClass('now')
+            $('.news .item').removeClass('animated zoomIn')
+          }
+          setTimeout(scroll, 1500)
+        }
+
+        $('.page').removeClass('now')
+        $(`.page:nth-child(${n + 1})`).addClass('now')
+      } else {
+        if (n > 1) {
+          n--
+          $(`.page:nth-child(${n + 1})`).removeClass('remove')
+          $('.page').removeClass('now')
+          $(`.page:nth-child(${n})`).addClass('now')
+          $('.nav_list li').removeClass('active')
+          $(`.nav_list li:nth-child(${n})`).addClass('active')
+
+          if (n == 4) {
+            grid.refreshItems().layout()
+            $('.news .item').addClass('animated zoomIn')
+          } else {
+            $('.news .item').removeClass('animated zoomIn')
           }
         }
-      // },500);
+        $('.page').removeClass('now')
+        $(`.page:nth-child(${n + 1})`).addClass('now')
+      }
     }
-    );
+
+  }
+  );
 
 
 
@@ -272,9 +272,7 @@ if (window.location.hash) {
 
 $(window).scroll(function (event) {
   var scroll = $(window).scrollTop();
-  // console.log(scroll);
   if (width <= 768) {
-    // console.log(width);
     if (scroll > 100) {
       $('.shopping_cart').addClass('fixed_cart');
       $('.backToTop').addClass('bump');
@@ -286,10 +284,10 @@ $(window).scroll(function (event) {
 
   }
 });
-$('.backToTop').click(function () {
+// $('.backToTop').click(function () {
 
-  document.documentElement.scrollTop = 0;
-})
+//   document.documentElement.scrollTop = 0;
+// })
 
 
 
