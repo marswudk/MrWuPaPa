@@ -121,15 +121,17 @@ $(window).on('resize', function () {
   } else {
     scroll_effect = false;
   }
+  if (769 < width < 1080){
+    finger_effect = true;
+  }else{
+    finger_effect = false;
+  }
   // console.log(scroll_effect)
 })
-
+var number_li = $('.nav_list li').length;
+n = 1;
 //mousewheel
 if (scroll_effect == true) {
-  var number_li = $('.nav_list li').length;
-  n = 1;
-
-  // 抓到滾動一次就settimeOut
 
   $('.page').on('mousewheel', function scroll(e) {
 
@@ -229,48 +231,88 @@ if (scroll_effect == true) {
   grid.refreshItems().layout()
 }
 
+var page_up = function () {
+  if (finger_effect == true) {
+    if (n < number_li) {
+      n++
+      $(`.page:nth-child(${n})`).addClass('remove')
+      $('.page').removeClass('now')
+      $(`.page:nth-child(${n + 1})`).addClass('now')
+      $('.nav_list li').removeClass('active')
+      $(`.nav_list li:nth-child(${n})`).addClass('active')
+      if (n == 4) {
+        grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
+      }
+    }
+  }
 
+}
+
+var page_down = function () {
+  if(finger_effect == true){
+    if (n > 1) {
+      n--
+      $(`.page:nth-child(${n + 1})`).removeClass('remove')
+      $('.page').removeClass('now')
+      $(`.page:nth-child(${n + 1})`).addClass('now')
+      $('.nav_list li').removeClass('active')
+      $(`.nav_list li:nth-child(${n})`).addClass('active')
+  
+      if (n == 4) {
+        grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
+      }
+    }
+  }
+  
+}
 
 //detect finger swipe
-document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
-var xDown = null;                                                        
+var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
-}                                                     
+    evt.originalEvent.touches; // jQuery
+}
 
 function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;                                      
-};                                                
+  const firstTouch = getTouches(evt)[0];
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+};
 
 function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = evt.touches[0].clientX;
+  var yUp = evt.touches[0].clientY;
+
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) < Math.abs(yDiff)) {/*most significant*/
+
+    if (yDiff > 0) {
+      page_up();
+    } else {
+      page_down();
     }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    if ( Math.abs( xDiff ) < Math.abs( yDiff ) ) {/*most significant*/
-                   
-        if ( yDiff > 0 ) {
-         scroll(e);
-        } else { 
-          scroll(e);
-        }                                                                 
-    }
-    /* reset values */
-    xDown = null;
-    yDown = null;                                             
+  }
+  /* reset values */
+  xDown = null;
+  yDown = null;
+  console.log(n);
 };
 
 //mousedown
