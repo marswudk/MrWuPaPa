@@ -122,6 +122,7 @@ body {
     height: calc(100vh - 116px);
     position: relative;
     overflow: hidden;
+    display: none;
     margin: 0;
 
     /* 進版時不顯示除了index以外的頁面 */
@@ -1409,7 +1410,8 @@ body {
     .fixed_cart {
         position: fixed;
         right: 10px;
-        top: 750px;
+        top: unset;
+        bottom: 190px;
         @media (max-width: 576px) {
             top: 560px;
             z-index: 11;
@@ -1976,6 +1978,7 @@ body {
 .show {
     opacity: 1;
     pointer-events: all;
+    display: block;
 
 }
 

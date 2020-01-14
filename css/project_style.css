@@ -145,6 +145,7 @@ body {
   height: calc(100vh - 116px);
   position: relative;
   overflow: hidden;
+  display: none;
   margin: 0;
   /* 進版時不顯示除了index以外的頁面 */
   /* 點擊logo後變更下列屬性 */
@@ -1255,7 +1256,8 @@ body {
 .all .fixed_cart {
   position: fixed;
   right: 10px;
-  top: 750px;
+  top: unset;
+  bottom: 190px;
 }
 
 @media (max-width: 576px) {
@@ -1736,6 +1738,7 @@ body {
 .show {
   opacity: 1;
   pointer-events: all;
+  display: block;
 }
 
 .backToTop {
