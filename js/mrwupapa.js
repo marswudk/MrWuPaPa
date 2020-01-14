@@ -323,13 +323,6 @@ function handleTouchMove(evt) {
 
 };
 
-//mousedown
-
-
-
-
-
-
 
 // mobile nav
 $('.nav_btn').click(function () {
@@ -348,6 +341,45 @@ $('.mobile_nav li').click(function () {
     $('.logo').removeClass('disapear')
     $('.page').removeClass('hide')
   }
+  var index = $(".mobile_nav li").index(this) + 1;
+
+    //check 是否跳頁 math.abs()->絕對值>1表示有跳頁
+    if (Math.abs(n - index) > 1) {
+      //跳頁
+      //add this
+      $(`.page`).removeClass('remove')
+
+      //remove page->可以讓最後一頁不新增remove這個class
+      for (let i = 1; i < index; i++) {
+        $(`.page:nth-child(${i + 1})`).addClass('remove')
+      }
+
+      n = index;
+
+      if (n == 4) {
+        grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
+      }
+
+      console.log("click跳頁:", n);
+
+    } else {      
+      $(`.page:nth-child(${index + 1})`).removeClass('remove')
+      $(`.page:nth-child(${index})`).addClass('remove')
+
+      //update n
+      n = index;
+
+      if (n == 4) {
+        grid.refreshItems().layout()
+        $('.news .item').addClass('animated zoomIn')
+      } else {
+        $('.news .item').removeClass('animated zoomIn')
+      }
+      console.log("click不跳頁:", index);
+    }
 
 })
 
