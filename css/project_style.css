@@ -1682,6 +1682,7 @@ body {
 }
 
 .modal .modal-content .modal-body img {
+  max-height: 400px;
   width: 300px;
 }
 

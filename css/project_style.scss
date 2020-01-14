@@ -1915,6 +1915,7 @@ body {
                 font-family: $font_family_text;
             }           
             img {
+                max-height: 400px;
                 width: 300px;
             }
         }
