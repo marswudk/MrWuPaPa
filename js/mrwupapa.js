@@ -111,19 +111,21 @@ $(document).ready(function () {
 var width = $(window).width();
 var height = $(window).height();
 var scroll_effect = true;
+var finger_effect = true;
 // console.log(width, height);
 
 $(window).on('resize', function () {
   var width = $(window).width();
   var height = $(window).height();
+  console.log(width);
   if (width >= 769) {
     scroll_effect = true;
   } else {
     scroll_effect = false;
   }
-  if (769 < width < 1080){
+  if (769 < width < 1080) {
     finger_effect = true;
-  }else{
+  } else {
     finger_effect = false;
   }
   // console.log(scroll_effect)
@@ -231,8 +233,10 @@ if (scroll_effect == true) {
   grid.refreshItems().layout()
 }
 
-var page_up = function () {
-  if (finger_effect == true) {
+
+if (finger_effect == true) {
+
+  var page_up = function () {
     if (n < number_li) {
       n++
       $(`.page:nth-child(${n})`).addClass('remove')
@@ -248,11 +252,8 @@ var page_up = function () {
       }
     }
   }
+  var page_down = function () {
 
-}
-
-var page_down = function () {
-  if(finger_effect == true){
     if (n > 1) {
       n--
       $(`.page:nth-child(${n + 1})`).removeClass('remove')
@@ -260,7 +261,7 @@ var page_down = function () {
       $(`.page:nth-child(${n + 1})`).addClass('now')
       $('.nav_list li').removeClass('active')
       $(`.nav_list li:nth-child(${n})`).addClass('active')
-  
+
       if (n == 4) {
         grid.refreshItems().layout()
         $('.news .item').addClass('animated zoomIn')
@@ -269,8 +270,11 @@ var page_down = function () {
       }
     }
   }
-  
+} else if (finger_effect == false) {
+  grid.refreshItems().layout()
 }
+
+
 
 //detect finger swipe
 document.addEventListener('touchstart', handleTouchStart, false);
@@ -304,15 +308,19 @@ function handleTouchMove(evt) {
   if (Math.abs(xDiff) < Math.abs(yDiff)) {/*most significant*/
 
     if (yDiff > 0) {
+
       page_up();
+
     } else {
+
       page_down();
+
     }
   }
   /* reset values */
   xDown = null;
   yDown = null;
-  console.log(n);
+
 };
 
 //mousedown
