@@ -129,6 +129,7 @@ $(window).on('resize', function () {
     finger_effect = false;
   }
   // console.log(scroll_effect)
+  scroll(event);
 })
 var number_li = $('.nav_list li').length;
 n = 1;
@@ -395,7 +396,7 @@ if (window.location.hash) {
 
 //回到最上&購物車
 
-$(window).scroll(function (event) {
+$(window).scroll(function scroll (event) {
   var scroll = $(window).scrollTop();
   if (width <= 768) {
     if (scroll > 100) {

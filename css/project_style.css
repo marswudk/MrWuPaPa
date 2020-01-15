@@ -1262,21 +1262,14 @@ body {
 
 @media (max-width: 576px) {
   .all .fixed_cart {
-    top: 560px;
-    z-index: 11;
-  }
-}
-
-@media (max-width: 414px) {
-  .all .fixed_cart {
-    top: 600px;
+    bottom: 80px;
     z-index: 11;
   }
 }
 
 @media (max-width: 375px) {
   .all .fixed_cart {
-    top: 520px;
+    bottom: 70px;
     z-index: 11;
   }
 }
